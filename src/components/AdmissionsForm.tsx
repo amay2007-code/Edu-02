@@ -52,7 +52,7 @@ export const AdmissionsForm: React.FC = () => {
               </span>
               <h3 className="text-2xl font-black text-[#12201F] mt-3">Schedule a Private Demo</h3>
               <p className="text-[#7C8E8D] text-sm mt-1.5 font-medium">
-                See how Edinburgh ERP can transform your campus. Speak with our product team.
+                See how Edinburgh's Digital Campus can transform your campus. Speak with our product team.
               </p>
             </div>
 

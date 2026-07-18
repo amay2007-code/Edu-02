@@ -89,12 +89,12 @@ export const Navbar: React.FC = () => {
           </div>
           <div className="flex flex-col text-left">
             <span className="text-sm font-black tracking-tight text-white font-sans leading-tight">University of Edinburgh</span>
-            <span className="text-[9px] font-bold text-[#DEC17E] uppercase tracking-widest leading-none mt-0.5 font-sans">ERP Platform</span>
+            <span className="text-[9px] font-bold text-[#DEC17E] uppercase tracking-widest leading-none mt-0.5 font-sans">Digital Campus</span>
           </div>
         </a>
 
-        {/* Center: Desktop Navigation Items */}
-        <div className="hidden xl:flex items-center gap-8 h-full">
+        {/* Center: Tablet & Desktop Navigation Items */}
+        <div className="hidden md:flex items-center gap-5 xl:gap-9 h-full">
           {Object.entries(menuData).map(([key, menu]) => (
             <div 
               key={key}
@@ -106,7 +106,7 @@ export const Navbar: React.FC = () => {
                 aria-expanded={activeMenu === key}
                 aria-haspopup="true"
                 onKeyDown={(e) => handleKeyDownMenu(e, key)}
-                className="flex items-center gap-1.5 text-sm font-bold uppercase tracking-wider text-white/90 hover:text-[#C9A24B] transition-colors focus:outline-none cursor-pointer"
+                className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-white/90 hover:text-[#C9A24B] transition-colors focus:outline-none cursor-pointer"
               >
                 <span>{menu.title}</span>
                 <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-300 ${activeMenu === key ? 'rotate-180 text-[#C9A24B]' : 'text-white/40'}`} />
@@ -145,7 +145,7 @@ export const Navbar: React.FC = () => {
         </div>
 
         {/* Right Side: Gold CTA Button */}
-        <div className="hidden xl:flex items-center shrink-0">
+        <div className="hidden md:flex items-center shrink-0">
           <a 
             href="#contact" 
             className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-xl bg-[#C9A24B] hover:bg-[#DEC17E] text-[#0F3235] text-xs font-bold uppercase tracking-wider shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer"
@@ -158,7 +158,7 @@ export const Navbar: React.FC = () => {
         {/* Mobile Hamburger Toggle */}
         <button 
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="xl:hidden p-2.5 rounded-xl text-white hover:bg-white/10 transition cursor-pointer"
+          className="md:hidden p-2.5 rounded-xl text-white hover:bg-white/10 transition cursor-pointer"
         >
           {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
         </button>
@@ -173,7 +173,7 @@ export const Navbar: React.FC = () => {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.2 }}
-            className="xl:hidden absolute top-full inset-x-0 bg-[#0F3235]/95 border-b border-[#3A7A80]/20 shadow-2xl backdrop-blur-xl flex flex-col px-6 py-5 gap-3 max-h-[80vh] overflow-y-auto"
+            className="md:hidden absolute top-full inset-x-0 bg-[#0F3235]/95 border-b border-[#3A7A80]/20 shadow-2xl backdrop-blur-xl flex flex-col px-6 py-5 gap-3 max-h-[80vh] overflow-y-auto"
           >
             {Object.entries(menuData).map(([key, menu]) => (
               <div key={key} className="border-b border-white/5 pb-2">

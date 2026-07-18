@@ -55,7 +55,7 @@ export const DashboardMockup: React.FC = () => {
           
           <div className="flex items-center gap-2 px-3 py-1 bg-slate-100/80 rounded-lg text-[11px] font-semibold text-slate-500 w-52 justify-center">
             <ShieldCheck className="w-3.5 h-3.5 text-emerald-500" />
-            <span>erp.ed.ac.uk/dashboard</span>
+            <span>portal.ed.ac.uk/dashboard</span>
           </div>
 
           <div className="w-12" /> {/* Spacer */}
@@ -92,7 +92,7 @@ export const DashboardMockup: React.FC = () => {
             {/* Title / Tab Selector */}
             <div className="flex items-center justify-between">
               <div>
-                <span className="text-[10px] font-bold text-blue-600 uppercase tracking-widest leading-none">University of Edinburgh ERP</span>
+                <span className="text-[10px] font-bold text-blue-600 uppercase tracking-widest leading-none">University of Edinburgh</span>
                 <h3 className="text-sm sm:text-base font-extrabold text-slate-900 leading-tight">Campus Operations Center</h3>
               </div>
               <div className="flex bg-slate-100 p-0.5 rounded-lg text-[10px] font-bold">

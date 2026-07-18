@@ -58,7 +58,7 @@ const testimonialsData: TestimonialItem[] = [
     name: 'Dr. Elizabeth Fraser',
     role: 'Vice-Principal (Academic)',
     organization: 'University of Edinburgh',
-    review: 'The smart redesign of Edinburgh ERP transformed our registry workflows. Course registration times fell by 82% and student dashboards have become the central hub for learning records.',
+    review: 'The smart redesign of Edinburgh\'s digital platform transformed our registry workflows. Course registration times fell by 82% and student dashboards have become the central hub for learning records.',
     rating: 5,
     avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=120&h=120&fit=crop'
   },
@@ -76,14 +76,14 @@ const testimonialsData: TestimonialItem[] = [
     name: 'Fiona Macpherson',
     role: 'Student Representative Council',
     organization: 'University of Edinburgh',
-    review: 'Edinburgh ERP gives us a single login interface for course selection, fees, and exam results. It feels extremely premium and runs beautifully on our smartphones.',
+    review: 'Edinburgh\'s digital campus gives us a single login interface for course selection, fees, and exam results. It feels extremely premium and runs beautifully on our smartphones.',
     rating: 5,
     avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=120&h=120&fit=crop'
   }
 ];
 
 const faqData: FaqItem[] = [
-  { id: 'faq-1', question: 'How secure is the Edinburgh ERP platform?', answer: 'Edinburgh ERP uses industry-leading security profiles. It is fully GDPR compliant, supports Shibboleth Single Sign-On (SSO), and encrypts database clusters with AES-256 both in transit and at rest.' },
+  { id: 'faq-1', question: 'How secure is the Edinburgh digital campus platform?', answer: 'Edinburgh\'s digital platform uses industry-leading security profiles. It is fully GDPR compliant, supports Shibboleth Single Sign-On (SSO), and encrypts database clusters with AES-256 both in transit and at rest.' },
   { id: 'faq-2', question: 'Does the system integrate with existing learning tools like Moodle?', answer: 'Yes. The system features deep REST API hooks that synchronize user enrollment, assignments, grade marks, and schedule calendars with Moodle, MS Teams, and Zoom classrooms.' },
   { id: 'faq-3', question: 'What is the implementation timeline for a college within the university?', answer: 'An enterprise deployment typically requires 4–6 weeks. This includes database migration audits, SSO configurations, user provisioning, and staff validation sessions.' },
   { id: 'faq-4', question: 'Can students check their class schedules and pay fees on their mobile devices?', answer: 'Yes. The entire platform features a mobile-responsive interface. Students can access class schedules, biometric attendance status, assignments, grades, and fee payments from any mobile browser.' },
@@ -189,7 +189,7 @@ export const LandingPage: React.FC = () => {
       {/* ----------------- INTERACTIVE WORKSPACE SHOWCASE ----------------- */}
       <InteractiveShowcase />
 
-      {/* ----------------- WHY CHOOSE OUR ERP (TWO COLUMN) ----------------- */}
+      {/* ----------------- WHY CHOOSE OUR PLATFORM (TWO COLUMN) ----------------- */}
       <section className="py-24 overflow-hidden relative">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
           
@@ -273,7 +273,7 @@ export const LandingPage: React.FC = () => {
           {/* Right Column: Features List */}
           <div className="lg:col-span-7 flex flex-col gap-6 text-left">
             <div className="mb-4">
-              <span className="text-xs font-bold text-[#1F5359] uppercase tracking-widest bg-[#1F5359]/10 px-3 py-1 rounded-full border border-[#1F5359]/20">Why Choose Edinburgh ERP</span>
+              <span className="text-xs font-bold text-[#1F5359] uppercase tracking-widest bg-[#1F5359]/10 px-3 py-1 rounded-full border border-[#1F5359]/20">Why Choose Edinburgh's Platform</span>
               <h2 className="text-3xl sm:text-4xl font-extrabold text-[#12201F] mt-3 font-sans tracking-tight">
                 Designed to Power High-Growth Organizations
               </h2>
@@ -310,7 +310,7 @@ export const LandingPage: React.FC = () => {
               The Digital Student Journey
             </h2>
             <p className="text-[#7C8E8D] text-base mt-2 font-medium">
-              Follow the streamlined flow of academic actions managed securely by Edinburgh ERP.
+              Follow the streamlined flow of academic actions managed securely by Edinburgh's digital platform.
             </p>
           </div>
 
@@ -537,7 +537,7 @@ export const LandingPage: React.FC = () => {
               Frequently Asked Questions
             </h2>
             <p className="text-[#7C8E8D] text-base mt-2 font-medium">
-              Answers to common inquiries regarding the smart ERP experience redesign.
+              Answers to common inquiries regarding the smart digital campus experience redesign.
             </p>
           </div>
 
@@ -650,7 +650,7 @@ export const LandingPage: React.FC = () => {
             <div className="lg:col-span-6 flex flex-col gap-6 text-left">
               <span className="text-xs font-bold text-[#1F5359] uppercase tracking-widest bg-[#1F5359]/10 px-3 py-1 rounded-full border border-[#1F5359]/20">Connect with Us</span>
               <h2 className="text-4xl font-extrabold text-[#12201F] font-sans tracking-tight leading-tight">
-                Experience the Future of the University of Edinburgh ERP
+                Experience the Future of the University of Edinburgh Digital Campus
               </h2>
               <p className="text-[#7C8E8D] text-base leading-relaxed font-medium">
                 Connect with our implementation leads. We provide tailored pricing documents, dedicated campus sandboxes, and data security worksheets.
@@ -699,10 +699,10 @@ export const LandingPage: React.FC = () => {
                 <div className="w-9 h-9 rounded-xl bg-[#C9A24B] text-[#0F3235] flex items-center justify-center font-bold">
                   <GraduationCap className="w-5.5 h-5.5" />
                 </div>
-                <span className="text-base font-extrabold tracking-tight text-white">University of Edinburgh ERP</span>
+                <span className="text-base font-extrabold tracking-tight text-white">University of Edinburgh</span>
               </a>
               <p className="text-xs text-slate-300 leading-relaxed max-w-sm font-medium">
-                Redesigning college ERP operations through a unified experience for academics, attendance, financials, and campus services.
+                Redesigning college operations through a unified experience for academics, attendance, financials, and campus services.
               </p>
               
               {/* Social links */}
@@ -770,7 +770,7 @@ export const LandingPage: React.FC = () => {
 
           {/* Bottom metadata */}
           <div className="pt-8 flex flex-col md:flex-row items-center justify-between text-[11px] text-slate-400 font-semibold gap-4 font-sans">
-            <p>© 2026 University of Edinburgh ERP. Redesigned Smart Campus Operations.</p>
+            <p>© 2026 University of Edinburgh. Redesigned Smart Campus Operations.</p>
             <div className="flex items-center gap-6">
               <a href="#" className="hover:text-[#C9A24B] transition">Privacy Policies</a>
               <a href="#" className="hover:text-[#C9A24B] transition">Terms & Conditions</a>

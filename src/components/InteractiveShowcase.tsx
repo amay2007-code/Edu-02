@@ -46,7 +46,7 @@ export const InteractiveShowcase: React.FC = () => {
             PLATFORM EXPERIENCE
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-[40px] font-black text-[#12201F] font-sans tracking-tight leading-tight mt-2">
-            Experience the University of Edinburgh ERP
+            Experience the University of Edinburgh Digital Campus
           </h2>
           <p className="text-[#7C8E8D] text-base sm:text-lg mt-2 leading-relaxed font-medium">
             A unified dashboard where students, faculty, and administrators manage academics, attendance, fee payments, examinations, and campus services from one intelligent interface.
@@ -63,7 +63,7 @@ export const InteractiveShowcase: React.FC = () => {
             </h3>
             
             <p className="text-[#7C8E8D] text-sm sm:text-base leading-relaxed font-medium">
-              Experience how the University of Edinburgh ERP brings academics, attendance, finance, examinations, and student services together into one beautifully designed workspace.
+              Experience how the University of Edinburgh platform brings academics, attendance, finance, examinations, and student services together into one beautifully designed workspace.
             </p>
 
             {/* Feature Bullets with Checkmarks */}
@@ -130,7 +130,7 @@ export const InteractiveShowcase: React.FC = () => {
                   </div>
                   <div className="flex items-center gap-1.5 px-3 py-1 bg-slate-100/80 rounded-md text-[10px] font-semibold text-slate-500 w-44 justify-center">
                     <ShieldCheck className="w-3 h-3 text-[#1F5359]" />
-                    <span>erp.ed.ac.uk/dashboard</span>
+                    <span>portal.ed.ac.uk/dashboard</span>
                   </div>
                   <div className="w-10" />
                 </div>
@@ -164,7 +164,7 @@ export const InteractiveShowcase: React.FC = () => {
                     
                     {/* Header */}
                     <div>
-                      <span className="text-[9px] font-bold text-[#1F5359] uppercase tracking-widest block text-left leading-none">University of Edinburgh ERP</span>
+                      <span className="text-[9px] font-bold text-[#1F5359] uppercase tracking-widest block text-left leading-none">University of Edinburgh</span>
                       <h4 className="text-sm font-extrabold text-[#12201F] text-left mt-1 leading-none font-sans">Campus Operations Center</h4>
                     </div>
 

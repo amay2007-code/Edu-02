@@ -76,12 +76,12 @@ export const HeroCarousel: React.FC = () => {
           
           {/* Dominant Heading */}
           <h1 className="text-4xl sm:text-6xl lg:text-[76px] font-black tracking-tight text-white leading-none font-sans uppercase">
-            University of Edinburgh ERP
+            University of Edinburgh
           </h1>
 
           {/* Premium Subtitle */}
           <h2 className="text-[#C9A24B] font-extrabold uppercase tracking-widest text-xs sm:text-sm lg:text-base leading-none">
-            Smart Academic Operating System
+            Smart Digital Campus
           </h2>
 
           {/* Description - constrained to 2 lines on large screens */}
@@ -98,7 +98,7 @@ export const HeroCarousel: React.FC = () => {
               href="#features" 
               className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-[#C9A24B] hover:bg-[#DEC17E] text-[#0F3235] font-bold rounded-2xl shadow-lg shadow-black/10 hover:scale-[1.03] active:scale-95 transition-all duration-300 pointer-events-auto"
             >
-              <span>Explore ERP</span>
+              <span>Explore the Platform</span>
               <ArrowRight className="w-4 h-4 text-[#0F3235]" />
             </a>
             <a 
