@@ -100,7 +100,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate, isAuthenticated, onL
   return (
     <nav 
       ref={navRef}
-      className="fixed top-0 inset-x-0 z-50 h-20 bg-[#0F3235]/90 backdrop-blur-md border-b border-[#C9A24B]/35 flex items-center shadow-lg shadow-black/10 transition-all duration-300"
+      className="fixed top-0 inset-x-0 z-[9999] h-20 bg-[#0F3235]/90 backdrop-blur-md border-b border-[#C9A24B]/35 flex items-center shadow-lg shadow-black/10 transition-all duration-300"
     >
       <div className="max-w-7xl mx-auto px-6 w-full flex items-center justify-between">
         
