@@ -93,14 +93,15 @@ export function Fees() {
 
   // Fee structure with automated calculations
   const feeStructure = [
-    { category: "Tuition Fee", amount: 4500, installments: 3, paid: 2 },
-    { category: "Student Services Fee", amount: 350, installments: 1, paid: 1 },
-    { category: "Library & IT Fee", amount: 200, installments: 1, paid: 0 },
-    { category: "Laboratory Fee", amount: 300, installments: 1, paid: 0 },
-    { category: "Athletics & Recreation", amount: 150, installments: 1, paid: 0 },
-    { category: "Examination Fee", amount: 250, installments: 1, paid: 0 },
-    { category: "Student Union Levy", amount: 120, installments: 1, paid: 0 },
-    { category: "Accommodation Fee", amount: 3200, installments: 3, paid: 1 }
+    { category: "Tuition Fee", amount: 25000, installments: 3, paid: 2 },
+    { category: "Development Fee", amount: 5000, installments: 1, paid: 1 },
+    { category: "Library Fee", amount: 2000, installments: 1, paid: 0 },
+    { category: "Laboratory Fee", amount: 3000, installments: 1, paid: 0 },
+    { category: "Sports Fee", amount: 1500, installments: 1, paid: 0 },
+    { category: "Examination Fee", amount: 2500, installments: 1, paid: 0 },
+    { category: "Computer Lab Fee", amount: 3000, installments: 1, paid: 0 },
+    { category: "Transport Fee", amount: 6000, installments: 2, paid: 1 },
+    { category: "Hostel Fee", amount: 24000, installments: 3, paid: 1 }
   ];
 
   // Calculate totals

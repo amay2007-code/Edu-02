@@ -55,7 +55,7 @@ export const HeroCarousel: React.FC<{ onNavigate: (route: string) => void }> = (
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       {...touchHandlers}
-      className="relative z-[1] w-full h-[70vh] md:h-[80vh] xl:h-[95vh] overflow-hidden bg-[#0F3235] flex items-center justify-center select-none"
+      className="relative w-full h-[70vh] md:h-[80vh] xl:h-[95vh] overflow-hidden bg-[#0F3235] flex items-center justify-center select-none"
     >
       {/* Background Slides Container */}
       <div className="absolute inset-0 w-full h-full pointer-events-none z-0">
@@ -71,7 +71,7 @@ export const HeroCarousel: React.FC<{ onNavigate: (route: string) => void }> = (
       </div>
 
       {/* FIXED CONTENT OVERLAY - CENTERED SAAS LAYOUT */}
-      <div className="relative z-10 w-full max-w-4xl mx-auto px-6 h-full flex items-center justify-center text-center pt-16">
+      <div className="relative z-10 w-full max-w-4xl mx-auto px-6 h-full flex items-center justify-center text-center pt-20">
         <div className="flex flex-col items-center gap-5 max-w-3xl">
           
           {/* Dominant Heading */}
