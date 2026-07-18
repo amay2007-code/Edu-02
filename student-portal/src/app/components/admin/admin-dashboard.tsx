@@ -388,7 +388,7 @@ export function AdminDashboard() {
               <IndianRupee className="h-4 w-4 text-muted-foreground" />
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold">₹{analytics.total_fees_collected?.toLocaleString('en-IN')}</div>
+              <div className="text-2xl font-bold">£{analytics.total_fees_collected?.toLocaleString('en-GB')}</div>
               <p className="text-xs text-muted-foreground">
                 {analytics.collection_percentage}% collection rate
               </p>
@@ -401,7 +401,7 @@ export function AdminDashboard() {
               <TrendingUp className="h-4 w-4 text-muted-foreground" />
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold">₹{analytics.total_fees_pending?.toLocaleString('en-IN')}</div>
+              <div className="text-2xl font-bold">£{analytics.total_fees_pending?.toLocaleString('en-GB')}</div>
               <p className="text-xs text-muted-foreground">Outstanding amount</p>
             </CardContent>
           </Card>

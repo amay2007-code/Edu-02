@@ -967,7 +967,7 @@ END:VCALENDAR`;
                             {holiday.type.charAt(0).toUpperCase() + holiday.type.slice(1)}
                           </Badge>
                           <span className="text-xs text-muted-foreground">
-                            {holiday.date.toLocaleDateString('en-IN', { 
+                            {holiday.date.toLocaleDateString('en-GB', { 
                               weekday: 'short', 
                               day: 'numeric', 
                               month: 'short' 

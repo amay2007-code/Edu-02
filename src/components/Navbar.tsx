@@ -120,7 +120,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate, isAuthenticated, onL
         </a>
 
         {/* Center: Tablet & Desktop Navigation Items */}
-        <div className="hidden md:flex items-center gap-5 xl:gap-9 h-full">
+        <div className="hidden lg:flex items-center gap-5 xl:gap-9 h-full">
           {Object.entries(menuData).map(([key, menu]) => (
             <div 
               key={key}
@@ -171,7 +171,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate, isAuthenticated, onL
         </div>
 
         {/* Right Side Actions: Authenticated state detection */}
-        <div className="hidden md:flex items-center gap-3 shrink-0">
+        <div className="hidden lg:flex items-center gap-3 shrink-0">
           {isAuthenticated ? (
             <>
               {/* Dashboard Direct Shortcut */}
@@ -217,7 +217,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate, isAuthenticated, onL
         {/* Mobile Hamburger Toggle */}
         <button 
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="md:hidden p-2.5 rounded-xl text-white hover:bg-white/10 transition cursor-pointer"
+          className="lg:hidden p-2.5 rounded-xl text-white hover:bg-white/10 transition cursor-pointer"
         >
           {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
         </button>
@@ -232,7 +232,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate, isAuthenticated, onL
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.2 }}
-            className="md:hidden absolute top-full inset-x-0 bg-[#0F3235]/95 border-b border-[#3A7A80]/20 shadow-2xl backdrop-blur-xl flex flex-col px-6 py-5 gap-3 max-h-[80vh] overflow-y-auto"
+            className="lg:hidden absolute top-full inset-x-0 bg-[#0F3235]/95 border-b border-[#3A7A80]/20 shadow-2xl backdrop-blur-xl flex flex-col px-6 py-5 gap-3 max-h-[80vh] overflow-y-auto"
           >
             {Object.entries(menuData).map(([key, menu]) => (
               <div key={key} className="border-b border-white/5 pb-2">

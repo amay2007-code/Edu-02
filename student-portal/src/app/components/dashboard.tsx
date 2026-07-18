@@ -89,7 +89,7 @@ export function Dashboard({ onNavigate }: DashboardProps) {
     {
       title: t("nav.fees"),
       value: "55%",
-      subtitle: "₹32,333 " + t("pending.amount"),
+      subtitle: "£32,333 " + t("pending.amount"),
       icon: IndianRupee,
       color: "text-amber-600",
       bgColor: "bg-amber-100",
@@ -215,7 +215,7 @@ export function Dashboard({ onNavigate }: DashboardProps) {
               <div className="flex items-center gap-4 mt-2 text-sm text-gray-500 dark:text-gray-400">
                 <span className="flex items-center gap-1">
                   <Clock className="h-4 w-4" />
-                  {currentTime.toLocaleString('en-IN', { 
+                  {currentTime.toLocaleString('en-GB', { 
                     weekday: 'long', 
                     year: 'numeric', 
                     month: 'long', 
@@ -289,7 +289,7 @@ export function Dashboard({ onNavigate }: DashboardProps) {
                 {t("today.schedule")}
               </CardTitle>
               <p className="text-sm text-muted-foreground mt-1">
-                {currentTime.toLocaleDateString('en-IN', { weekday: 'long', month: 'long', day: 'numeric' })}
+                {currentTime.toLocaleDateString('en-GB', { weekday: 'long', month: 'long', day: 'numeric' })}
               </p>
             </div>
             <Button 
@@ -477,12 +477,12 @@ export function Dashboard({ onNavigate }: DashboardProps) {
               className="h-auto p-4 flex flex-col items-center gap-2 bg-white/80 hover:bg-white hover:shadow-md transition-all"
               onClick={() => {
                 onNavigate("fees");
-                toast.success("Opening fee payment portal - ₹32,333 pending");
+                toast.success("Opening fee payment portal - £32,333 pending");
               }}
             >
               <CreditCard className="h-6 w-6 text-amber-600" />
               <span className="text-sm font-medium">Pay Fees</span>
-              <span className="text-xs text-muted-foreground">₹32,333 pending</span>
+              <span className="text-xs text-muted-foreground">£32,333 pending</span>
             </Button>
             
             <Button 

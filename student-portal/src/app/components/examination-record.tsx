@@ -256,7 +256,7 @@ export function ExaminationRecord() {
       
       <div class="footer">
         This is an official transcript from Rajasthan Institute of Technology.<br>
-        Generated on ${new Date().toLocaleDateString('en-IN')}<br>
+        Generated on ${new Date().toLocaleDateString('en-GB')}<br>
         <strong>जय राजस्थान!</strong>
       </div>
     </body>

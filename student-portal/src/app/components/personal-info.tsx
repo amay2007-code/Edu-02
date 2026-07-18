@@ -413,7 +413,7 @@ export function PersonalInfo() {
               </div>
               <div className="space-y-2">
                 <Label htmlFor="hostelFee">Monthly Hostel Fee</Label>
-                <Input id="hostelFee" defaultValue="₹8,000" disabled />
+                <Input id="hostelFee" defaultValue="£8,000" disabled />
               </div>
               <div className="space-y-2">
                 <Label htmlFor="checkInDate">Check-in Date</Label>

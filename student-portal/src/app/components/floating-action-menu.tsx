@@ -136,9 +136,9 @@ export function FloatingActionMenu({ onNavigate, onOpenChatbot }: FloatingAction
           
           <div class="report-section">
             <h3>💰 Fee Status</h3>
-            <p><strong>Total Annual Fee:</strong> ₹72,000</p>
-            <p><strong>Amount Paid:</strong> ₹39,667</p>
-            <p><strong>Pending Amount:</strong> ₹32,333</p>
+            <p><strong>Total Annual Fee:</strong> £72,000</p>
+            <p><strong>Amount Paid:</strong> £39,667</p>
+            <p><strong>Pending Amount:</strong> £32,333</p>
             <p><strong>Next Due Date:</strong> December 15, 2025</p>
           </div>
           

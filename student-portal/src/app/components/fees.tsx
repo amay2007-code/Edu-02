@@ -93,15 +93,14 @@ export function Fees() {
 
   // Fee structure with automated calculations
   const feeStructure = [
-    { category: "Tuition Fee", amount: 25000, installments: 3, paid: 2 },
-    { category: "Development Fee", amount: 5000, installments: 1, paid: 1 },
-    { category: "Library Fee", amount: 2000, installments: 1, paid: 0 },
-    { category: "Laboratory Fee", amount: 3000, installments: 1, paid: 0 },
-    { category: "Sports Fee", amount: 1500, installments: 1, paid: 0 },
-    { category: "Examination Fee", amount: 2500, installments: 1, paid: 0 },
-    { category: "Computer Lab Fee", amount: 3000, installments: 1, paid: 0 },
-    { category: "Transport Fee", amount: 6000, installments: 2, paid: 1 },
-    { category: "Hostel Fee", amount: 24000, installments: 3, paid: 1 }
+    { category: "Tuition Fee", amount: 4500, installments: 3, paid: 2 },
+    { category: "Student Services Fee", amount: 350, installments: 1, paid: 1 },
+    { category: "Library & IT Fee", amount: 200, installments: 1, paid: 0 },
+    { category: "Laboratory Fee", amount: 300, installments: 1, paid: 0 },
+    { category: "Athletics & Recreation", amount: 150, installments: 1, paid: 0 },
+    { category: "Examination Fee", amount: 250, installments: 1, paid: 0 },
+    { category: "Student Union Levy", amount: 120, installments: 1, paid: 0 },
+    { category: "Accommodation Fee", amount: 3200, installments: 3, paid: 1 }
   ];
 
   // Calculate totals
@@ -217,7 +216,7 @@ export function Fees() {
       
       <div class="student-details">
         <div><strong>Receipt No:</strong> ${receipt.receiptNo}</div>
-        <div><strong>Date:</strong> ${new Date(receipt.date).toLocaleDateString('en-IN')}</div>
+        <div><strong>Date:</strong> ${new Date(receipt.date).toLocaleDateString('en-GB')}</div>
         <div><strong>Student Name:</strong> ${studentInfo.name}</div>
         <div><strong>Course:</strong> ${studentInfo.class}</div>
         <div><strong>Roll Number:</strong> ${studentInfo.rollNumber}</div>
@@ -231,7 +230,7 @@ export function Fees() {
           <tr>
             <th>S.No.</th>
             <th>Fee Category</th>
-            <th>Amount (₹)</th>
+            <th>Amount (£)</th>
           </tr>
         </thead>
         <tbody>
@@ -239,12 +238,12 @@ export function Fees() {
             <tr>
               <td>${idx + 1}</td>
               <td>${item.category}</td>
-              <td>₹${item.amount.toLocaleString()}</td>
+              <td>£${item.amount.toLocaleString()}</td>
             </tr>
           `).join('')}
           <tr class="total-row">
             <td colspan="2"><strong>TOTAL AMOUNT</strong></td>
-            <td><strong>₹${receipt.amount.toLocaleString()}</strong></td>
+            <td><strong>£${receipt.amount.toLocaleString()}</strong></td>
           </tr>
         </tbody>
       </table>
@@ -256,9 +255,9 @@ export function Fees() {
       <div class="payment-details">
         <h3 style="margin: 0 0 15px 0;">Payment Details</h3>
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
-          <div><strong>Transaction Date:</strong> ${new Date(receipt.date).toLocaleDateString('en-IN')}</div>
+          <div><strong>Transaction Date:</strong> ${new Date(receipt.date).toLocaleDateString('en-GB')}</div>
           <div><strong>Payment Method:</strong> ${receipt.method}</div>
-          <div><strong>Receipt Generated:</strong> ${new Date().toLocaleDateString('en-IN')}</div>
+          <div><strong>Receipt Generated:</strong> ${new Date().toLocaleDateString('en-GB')}</div>
           <div><strong>Academic Year:</strong> ${currentAcademicYear}</div>
         </div>
       </div>
@@ -364,7 +363,7 @@ export function Fees() {
         amount: amount * 100, // Razorpay expects amount in paise
         amount_paid: 0,
         amount_due: amount * 100,
-        currency: "INR",
+        currency: "GBP",
         receipt: `rcpt_${Date.now()}`,
         status: "created",
         created_at: Math.floor(Date.now() / 1000)
@@ -430,7 +429,7 @@ export function Fees() {
     
     // Show success message with payment ID
     toast.success(
-      `Payment of ₹${amount.toLocaleString()} completed successfully! Payment ID: ${response.razorpay_payment_id.slice(-8)}`,
+      `Payment of £${amount.toLocaleString()} completed successfully! Payment ID: ${response.razorpay_payment_id.slice(-8)}`,
       { duration: 5000 }
     );
     
@@ -462,7 +461,7 @@ export function Fees() {
     }
 
     if (amount > pendingAmount) {
-      toast.error(`Amount cannot exceed pending balance of ₹${pendingAmount.toLocaleString()}`);
+      toast.error(`Amount cannot exceed pending balance of £${pendingAmount.toLocaleString()}`);
       return;
     }
 
@@ -481,7 +480,7 @@ export function Fees() {
       const options = {
         key: RAZORPAY_KEY_ID,
         amount: order.amount,
-        currency: "INR",
+        currency: "GBP",
         name: "University of Edinburgh",
         description: `Fee Payment for ${studentInfo.name}`,
         image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=150&h=150&fit=crop&crop=center", // Logo
@@ -571,7 +570,7 @@ export function Fees() {
           <div><strong>Roll Number:</strong> ${studentInfo.rollNumber}</div>
           <div><strong>Academic Year:</strong> ${currentAcademicYear}</div>
           <div><strong>Father's Name:</strong> ${studentInfo.fatherName}</div>
-          <div><strong>Generated Date:</strong> ${new Date().toLocaleDateString('en-IN')}</div>
+          <div><strong>Generated Date:</strong> ${new Date().toLocaleDateString('en-GB')}</div>
         </div>
       </div>
       
@@ -580,9 +579,9 @@ export function Fees() {
           <tr>
             <th>S.No.</th>
             <th>Fee Category</th>
-            <th>Annual Amount (₹)</th>
+            <th>Annual Amount (£)</th>
             <th>No. of Installments</th>
-            <th>Amount per Installment (₹)</th>
+            <th>Amount per Installment (£)</th>
             <th>Due Dates</th>
           </tr>
         </thead>
@@ -591,9 +590,9 @@ export function Fees() {
             <tr>
               <td>${index + 1}</td>
               <td><strong>${fee.category}</strong></td>
-              <td class="amount">₹${fee.amount.toLocaleString()}</td>
+              <td class="amount">£${fee.amount.toLocaleString()}</td>
               <td>${fee.installments}</td>
-              <td class="amount">₹${Math.round(fee.amount / fee.installments).toLocaleString()}</td>
+              <td class="amount">£${Math.round(fee.amount / fee.installments).toLocaleString()}</td>
               <td>
                 ${fee.installments === 1 ? 'April 15' : 
                   fee.installments === 2 ? 'April 15, Aug 15' : 
@@ -603,7 +602,7 @@ export function Fees() {
           `).join('')}
           <tr class="total-row">
             <td colspan="2"><strong>TOTAL ANNUAL FEE</strong></td>
-            <td class="amount"><strong>₹${totalAnnualFee.toLocaleString()}</strong></td>
+            <td class="amount"><strong>£${totalAnnualFee.toLocaleString()}</strong></td>
             <td colspan="3"><strong>Amount in Words: ${numberToWords(totalAnnualFee)} Rupees Only</strong></td>
           </tr>
         </tbody>
@@ -613,7 +612,7 @@ export function Fees() {
         <h3 style="margin: 0 0 15px 0; color: #0f172a;">Payment Terms & Conditions</h3>
         <ul style="margin: 0; padding-left: 20px; line-height: 1.8;">
           <li>Fees must be paid by the due dates mentioned above</li>
-          <li>Late payment will attract a fine of ₹100 per day after due date</li>
+          <li>Late payment will attract a fine of £100 per day after due date</li>
           <li>Fees can be paid online through school portal or at school counter</li>
           <li>Original fee receipt must be preserved for record purposes</li>
           <li>No fee refund after admission confirmation</li>
@@ -674,7 +673,7 @@ export function Fees() {
             <IndianRupee className="h-4 w-4 text-primary" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">₹{totalAnnualFee.toLocaleString()}</div>
+            <div className="text-2xl font-bold">£{totalAnnualFee.toLocaleString()}</div>
             <p className="text-xs text-muted-foreground">Academic Year {currentAcademicYear}</p>
           </CardContent>
         </Card>
@@ -685,7 +684,7 @@ export function Fees() {
             <CheckCircle className="h-4 w-4 text-green-600" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold text-green-600">₹{paidAmount.toLocaleString()}</div>
+            <div className="text-2xl font-bold text-green-600">£{paidAmount.toLocaleString()}</div>
             <p className="text-xs text-muted-foreground">
               {Math.round((paidAmount / totalAnnualFee) * 100)}% of total fee
             </p>
@@ -698,7 +697,7 @@ export function Fees() {
             <AlertCircle className="h-4 w-4 text-orange-600" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold text-orange-600">₹{pendingAmount.toLocaleString()}</div>
+            <div className="text-2xl font-bold text-orange-600">£{pendingAmount.toLocaleString()}</div>
             <p className="text-xs text-muted-foreground">Due by Dec 15, 2025</p>
           </CardContent>
         </Card>
@@ -780,7 +779,7 @@ export function Fees() {
                       <div><strong>Roll Number:</strong> ${studentInfo.rollNumber}</div>
                       <div><strong>Academic Year:</strong> ${currentAcademicYear}</div>
                       <div><strong>Father's Name:</strong> ${studentInfo.fatherName}</div>
-                      <div><strong>Generated Date:</strong> ${new Date().toLocaleDateString('en-IN')}</div>
+                      <div><strong>Generated Date:</strong> ${new Date().toLocaleDateString('en-GB')}</div>
                     </div>
                   </div>
                   
@@ -789,9 +788,9 @@ export function Fees() {
                       <tr>
                         <th>S.No.</th>
                         <th>Fee Category</th>
-                        <th>Annual Amount (₹)</th>
+                        <th>Annual Amount (£)</th>
                         <th>No. of Installments</th>
-                        <th>Amount per Installment (₹)</th>
+                        <th>Amount per Installment (£)</th>
                         <th>Due Dates</th>
                       </tr>
                     </thead>
@@ -800,9 +799,9 @@ export function Fees() {
                         <tr>
                           <td>${index + 1}</td>
                           <td><strong>${fee.category}</strong></td>
-                          <td class="amount">₹${fee.amount.toLocaleString()}</td>
+                          <td class="amount">£${fee.amount.toLocaleString()}</td>
                           <td>${fee.installments}</td>
-                          <td class="amount">₹${Math.round(fee.amount / fee.installments).toLocaleString()}</td>
+                          <td class="amount">£${Math.round(fee.amount / fee.installments).toLocaleString()}</td>
                           <td>
                             ${fee.installments === 1 ? 'April 15' : 
                               fee.installments === 2 ? 'April 15, Aug 15' : 
@@ -812,7 +811,7 @@ export function Fees() {
                       `).join('')}
                       <tr class="total-row">
                         <td colspan="2"><strong>TOTAL ANNUAL FEE</strong></td>
-                        <td class="amount"><strong>₹${totalAnnualFee.toLocaleString()}</strong></td>
+                        <td class="amount"><strong>£${totalAnnualFee.toLocaleString()}</strong></td>
                         <td colspan="3"><strong>Amount in Words: ${numberToWords(totalAnnualFee)} Rupees Only</strong></td>
                       </tr>
                     </tbody>
@@ -822,7 +821,7 @@ export function Fees() {
                     <h3 style="margin: 0 0 15px 0; color: #0f172a;">Payment Terms & Conditions</h3>
                     <ul style="margin: 0; padding-left: 20px; line-height: 1.8;">
                       <li>Fees must be paid by the due dates mentioned above</li>
-                      <li>Late payment will attract a fine of ₹100 per day after due date</li>
+                      <li>Late payment will attract a fine of £100 per day after due date</li>
                       <li>Fees can be paid online through school portal or at school counter</li>
                       <li>Original fee receipt must be preserved for record purposes</li>
                       <li>No fee refund after admission confirmation</li>
@@ -895,8 +894,8 @@ export function Fees() {
                   ${paymentHistory.map(payment => `
                     <div class="receipt-item">
                       <h3>Receipt No: ${payment.receiptNo}</h3>
-                      <p><strong>Amount:</strong> ₹${payment.amount.toLocaleString()}</p>
-                      <p><strong>Date:</strong> ${new Date(payment.date).toLocaleDateString('en-IN')}</p>
+                      <p><strong>Amount:</strong> £${payment.amount.toLocaleString()}</p>
+                      <p><strong>Date:</strong> ${new Date(payment.date).toLocaleDateString('en-GB')}</p>
                       <p><strong>Method:</strong> ${payment.method}</p>
                       <p><strong>Status:</strong> ${payment.status}</p>
                       <p><strong>Description:</strong> ${payment.description}</p>
@@ -953,7 +952,7 @@ export function Fees() {
           </DialogHeader>
           <div className="space-y-4">
             <div className="space-y-2">
-              <Label htmlFor="amount">Amount (₹)</Label>
+              <Label htmlFor="amount">Amount (£)</Label>
               <Input
                 id="amount"
                 type="number"
@@ -965,7 +964,7 @@ export function Fees() {
               />
               {paymentAmount && parseFloat(paymentAmount) > 0 && (
                 <p className="text-xs text-muted-foreground">
-                  Processing fee: ₹{(parseFloat(paymentAmount) * 0.02).toFixed(2)} (2% + GST)
+                  Processing fee: £{(parseFloat(paymentAmount) * 0.02).toFixed(2)} (2% + GST)
                 </p>
               )}
             </div>
@@ -1018,7 +1017,7 @@ export function Fees() {
               className="w-full"
             >
               <CreditCard className="mr-2 h-4 w-4" />
-              {isProcessing ? "Processing Payment..." : !isRazorpayLoaded ? "Loading Payment Gateway..." : `Pay ₹${paymentAmount || "0"} with Razorpay`}
+              {isProcessing ? "Processing Payment..." : !isRazorpayLoaded ? "Loading Payment Gateway..." : `Pay £${paymentAmount || "0"} with Razorpay`}
             </Button>
           </DialogFooter>
         </DialogContent>
@@ -1040,11 +1039,11 @@ export function Fees() {
                   <div>
                     <div className="font-medium">{due.description}</div>
                     <div className="text-sm text-muted-foreground">
-                      Due: {new Date(due.dueDate).toLocaleDateString('en-IN')}
+                      Due: {new Date(due.dueDate).toLocaleDateString('en-GB')}
                     </div>
                   </div>
                   <div className="text-right">
-                    <div className="font-bold text-red-700">₹{due.amount.toLocaleString()}</div>
+                    <div className="font-bold text-red-700">£{due.amount.toLocaleString()}</div>
                     <Badge className="bg-red-100 text-red-800">
                       {due.status}
                     </Badge>
@@ -1080,9 +1079,9 @@ export function Fees() {
                     </div>
                     <div className="flex items-center gap-3">
                       <div className="text-right">
-                        <div className="font-medium">₹{fee.amount.toLocaleString()}</div>
+                        <div className="font-medium">£{fee.amount.toLocaleString()}</div>
                         <div className="text-sm text-muted-foreground">
-                          Pending: ₹{pendingForThisFee.toLocaleString()}
+                          Pending: £{pendingForThisFee.toLocaleString()}
                         </div>
                       </div>
                       <Badge className={getStatusColor(status)}>
@@ -1097,7 +1096,7 @@ export function Fees() {
               
               <div className="flex items-center justify-between p-3 bg-muted rounded-lg">
                 <div className="font-bold">Total</div>
-                <div className="font-bold">₹{totalAnnualFee.toLocaleString()}</div>
+                <div className="font-bold">£{totalAnnualFee.toLocaleString()}</div>
               </div>
             </div>
           </CardContent>
@@ -1114,7 +1113,7 @@ export function Fees() {
                 <div key={index} className="p-4 border rounded-lg">
                   <div className="flex items-start justify-between mb-2">
                     <div>
-                      <div className="font-medium">₹{payment.amount.toLocaleString()}</div>
+                      <div className="font-medium">£{payment.amount.toLocaleString()}</div>
                       <div className="text-sm text-muted-foreground">{payment.receiptNo}</div>
                     </div>
                     <Badge className={getStatusColor(payment.status)}>
@@ -1127,7 +1126,7 @@ export function Fees() {
                   <div className="flex items-center gap-4 text-xs text-muted-foreground">
                     <span className="flex items-center gap-1">
                       <Calendar className="h-3 w-3" />
-                      {new Date(payment.date).toLocaleDateString('en-IN')}
+                      {new Date(payment.date).toLocaleDateString('en-GB')}
                     </span>
                     <span>Method: {payment.method}</span>
                   </div>
@@ -1156,7 +1155,7 @@ export function Fees() {
                           <div className="space-y-3">
                             <div className="flex justify-between">
                               <span>Date:</span>
-                              <span>{new Date(payment.date).toLocaleDateString('en-IN')}</span>
+                              <span>{new Date(payment.date).toLocaleDateString('en-GB')}</span>
                             </div>
                             <div className="flex justify-between">
                               <span>Method:</span>
@@ -1168,14 +1167,14 @@ export function Fees() {
                               {payment.items.map((item: any, idx: number) => (
                                 <div key={idx} className="flex justify-between text-sm">
                                   <span>{item.category}</span>
-                                  <span>₹{item.amount.toLocaleString()}</span>
+                                  <span>£{item.amount.toLocaleString()}</span>
                                 </div>
                               ))}
                             </div>
                             <Separator />
                             <div className="flex justify-between font-medium">
                               <span>Total:</span>
-                              <span>₹{payment.amount.toLocaleString()}</span>
+                              <span>£{payment.amount.toLocaleString()}</span>
                             </div>
                           </div>
                           <DialogFooter>
@@ -1234,10 +1233,10 @@ export function Fees() {
                 return (
                   <TableRow key={index}>
                     <TableCell className="font-medium">{fee.category}</TableCell>
-                    <TableCell>₹{fee.amount.toLocaleString()}</TableCell>
+                    <TableCell>£{fee.amount.toLocaleString()}</TableCell>
                     <TableCell>{fee.installments}</TableCell>
-                    <TableCell>₹{paidForThisFee.toLocaleString()}</TableCell>
-                    <TableCell>₹{pendingForThisFee.toLocaleString()}</TableCell>
+                    <TableCell>£{paidForThisFee.toLocaleString()}</TableCell>
+                    <TableCell>£{pendingForThisFee.toLocaleString()}</TableCell>
                     <TableCell>
                       <Badge className={getStatusColor(status)}>
                         {status}

@@ -91,7 +91,7 @@ function AppContent() {
     assignmentsProgress: 75
   });
   const [quickStats, setQuickStats] = useState({
-    pendingFees: "₹32,333",
+    pendingFees: "£32,333",
     nextExam: "Advanced Calculus - Dec 20",
     todayClasses: 4,
     unreadNotifications: 2

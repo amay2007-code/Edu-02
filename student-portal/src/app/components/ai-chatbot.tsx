@@ -81,12 +81,12 @@ export function AIChatbot({ onNavigate, isOpen, onToggle }: AIChatbotProps) {
     
     // Fee Information
     feeStructure: {
-      "Tuition Fee": "₹12,000 per term",
-      "Development Fee": "₹3,000 per term", 
-      "Laboratory Fee": "₹2,000 per term",
-      "Library Fee": "₹1,000 per term",
-      "Sports Fee": "₹1,500 per term",
-      "Total per term": "₹19,500"
+      "Tuition Fee": "£12,000 per term",
+      "Development Fee": "£3,000 per term", 
+      "Laboratory Fee": "£2,000 per term",
+      "Library Fee": "£1,000 per term",
+      "Sports Fee": "£1,500 per term",
+      "Total per term": "£19,500"
     },
     
     // College Information
@@ -150,11 +150,11 @@ export function AIChatbot({ onNavigate, isOpen, onToggle }: AIChatbotProps) {
     // Fee-related queries
     if (message.includes("fee") || message.includes("फीस") || message.includes("पैसा") || message.includes("payment")) {
       if (language === 'hi') {
-        response = "आपकी फीस की जानकारी:\n\n• कुल फीस: ₹72,000 (वार्षिक)\n• भुगतान हो चुका: ₹39,667\n• बकाया: ₹32,333\n• अगली किस्त: 15 दिसंबर, 2025\n\nक्या आप फीस भुगतान करना चाहते हैं?";
+        response = "आपकी फीस की जानकारी:\n\n• कुल फीस: £72,000 (वार्षिक)\n• भुगतान हो चुका: £39,667\n• बकाया: £32,333\n• अगली किस्त: 15 दिसंबर, 2025\n\nक्या आप फीस भुगतान करना चाहते हैं?";
       } else if (language === 'raj') {
-        response = "थारी फीस री जानकारी:\n\n• कुल फीस: ₹72,000 (सालाना)\n• भर्या जा चुक्या: ₹39,667\n• बाकी: ₹32,333\n• आगली किस्त: 15 दिसंबर, 2025\n\nके थूं फीस भरणा चाहे हो?";
+        response = "थारी फीस री जानकारी:\n\n• कुल फीस: £72,000 (सालाना)\n• भर्या जा चुक्या: £39,667\n• बाकी: £32,333\n• आगली किस्त: 15 दिसंबर, 2025\n\nके थूं फीस भरणा चाहे हो?";
       } else {
-        response = "Here's your fee information:\n\n• Total Annual Fee: ₹72,000\n• Amount Paid: ₹39,667\n• Pending Amount: ₹32,333\n• Next Due Date: December 15, 2025\n\nWould you like to make a payment?";
+        response = "Here's your fee information:\n\n• Total Annual Fee: £72,000\n• Amount Paid: £39,667\n• Pending Amount: £32,333\n• Next Due Date: December 15, 2025\n\nWould you like to make a payment?";
       }
       
       actions = [{
