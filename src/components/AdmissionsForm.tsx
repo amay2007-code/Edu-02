@@ -31,11 +31,11 @@ export const AdmissionsForm: React.FC = () => {
   };
 
   return (
-    <div className="relative w-full overflow-hidden rounded-3xl glass-card p-8 border border-white/60 shadow-xl bg-white/70">
+    <div className="relative w-full overflow-hidden rounded-3xl p-8 border border-white/60 shadow-xl bg-white/85 backdrop-blur-md">
       
       {/* Decorative backdrop elements */}
-      <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/5 rounded-full blur-2xl pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-32 h-32 bg-indigo-500/5 rounded-full blur-2xl pointer-events-none" />
+      <div className="absolute top-0 right-0 w-32 h-32 bg-[#1F5359]/5 rounded-full blur-2xl pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-32 h-32 bg-[#C9A24B]/5 rounded-full blur-2xl pointer-events-none" />
 
       <AnimatePresence mode="wait">
         {!isSubmitted ? (
@@ -46,21 +46,21 @@ export const AdmissionsForm: React.FC = () => {
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.3 }}
           >
-            <div className="mb-6">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-blue-50 text-blue-600 border border-blue-100">
+            <div className="mb-6 text-left">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-[#1F5359]/10 text-[#1F5359] border border-[#1F5359]/20">
                 <Calendar className="w-3.5 h-3.5" /> Book Demo
               </span>
-              <h3 className="text-2xl font-bold text-slate-900 mt-3">Schedule a Private Demo</h3>
-              <p className="text-slate-500 text-sm mt-1.5">
+              <h3 className="text-2xl font-black text-[#12201F] mt-3">Schedule a Private Demo</h3>
+              <p className="text-[#7C8E8D] text-sm mt-1.5 font-medium">
                 See how Edinburgh ERP can transform your campus. Speak with our product team.
               </p>
             </div>
 
-            <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+            <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 text-left">
               
               {/* Name */}
               <div>
-                <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+                <label className="block text-xs font-bold text-[#12201F] uppercase tracking-wider mb-1.5">
                   Full Name
                 </label>
                 <div className="relative">
@@ -71,8 +71,8 @@ export const AdmissionsForm: React.FC = () => {
                     type="text"
                     placeholder="Jane Doe"
                     {...register('name')}
-                    className={`w-full pl-10 pr-4 py-3 bg-white/80 border rounded-xl text-sm font-medium focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-all ${
-                      errors.name ? 'border-red-400 focus:border-red-400' : 'border-slate-200 focus:border-blue-500'
+                    className={`w-full pl-10 pr-4 py-3 bg-white/80 border rounded-xl text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#C9A24B]/20 transition-all ${
+                      errors.name ? 'border-red-400 focus:border-red-400' : 'border-slate-200 focus:border-[#C9A24B] focus:ring-[#C9A24B]/20'
                     }`}
                   />
                 </div>
@@ -83,7 +83,7 @@ export const AdmissionsForm: React.FC = () => {
 
               {/* Department */}
               <div>
-                <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+                <label className="block text-xs font-bold text-[#12201F] uppercase tracking-wider mb-1.5">
                   Department
                 </label>
                 <div className="relative">
@@ -94,8 +94,8 @@ export const AdmissionsForm: React.FC = () => {
                     type="text"
                     placeholder="e.g. School of Informatics"
                     {...register('department')}
-                    className={`w-full pl-10 pr-4 py-3 bg-white/80 border rounded-xl text-sm font-medium focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-all ${
-                      errors.department ? 'border-red-400 focus:border-red-400' : 'border-slate-200 focus:border-blue-500'
+                    className={`w-full pl-10 pr-4 py-3 bg-white/80 border rounded-xl text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#C9A24B]/20 transition-all ${
+                      errors.department ? 'border-red-400 focus:border-red-400' : 'border-slate-200 focus:border-[#C9A24B] focus:ring-[#C9A24B]/20'
                     }`}
                   />
                 </div>
@@ -108,7 +108,7 @@ export const AdmissionsForm: React.FC = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {/* Email */}
                 <div>
-                  <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+                  <label className="block text-xs font-bold text-[#12201F] uppercase tracking-wider mb-1.5">
                     University Email
                   </label>
                   <div className="relative">
@@ -119,8 +119,8 @@ export const AdmissionsForm: React.FC = () => {
                       type="email"
                       placeholder="username@ed.ac.uk"
                       {...register('email')}
-                      className={`w-full pl-10 pr-4 py-3 bg-white/80 border rounded-xl text-sm font-medium focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-all ${
-                        errors.email ? 'border-red-400 focus:border-red-400' : 'border-slate-200 focus:border-blue-500'
+                      className={`w-full pl-10 pr-4 py-3 bg-white/80 border rounded-xl text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#C9A24B]/20 transition-all ${
+                        errors.email ? 'border-red-400 focus:border-red-400' : 'border-slate-200 focus:border-[#C9A24B] focus:ring-[#C9A24B]/20'
                       }`}
                     />
                   </div>
@@ -131,7 +131,7 @@ export const AdmissionsForm: React.FC = () => {
 
                 {/* Phone */}
                 <div>
-                  <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+                  <label className="block text-xs font-bold text-[#12201F] uppercase tracking-wider mb-1.5">
                     Phone Number
                   </label>
                   <div className="relative">
@@ -142,8 +142,8 @@ export const AdmissionsForm: React.FC = () => {
                       type="tel"
                       placeholder="(555) 000-0000"
                       {...register('phone')}
-                      className={`w-full pl-10 pr-4 py-3 bg-white/80 border rounded-xl text-sm font-medium focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-all ${
-                        errors.phone ? 'border-red-400 focus:border-red-400' : 'border-slate-200 focus:border-blue-500'
+                      className={`w-full pl-10 pr-4 py-3 bg-white/80 border rounded-xl text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#C9A24B]/20 transition-all ${
+                        errors.phone ? 'border-red-400 focus:border-red-400' : 'border-slate-200 focus:border-[#C9A24B] focus:ring-[#C9A24B]/20'
                       }`}
                     />
                   </div>
@@ -155,14 +155,14 @@ export const AdmissionsForm: React.FC = () => {
 
               {/* Message */}
               <div>
-                <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+                <label className="block text-xs font-bold text-[#12201F] uppercase tracking-wider mb-1.5">
                   Message / Special Requirements (Optional)
                 </label>
                 <textarea
                   placeholder="Tell us about your campus size, current tools, and what you are looking to achieve..."
                   rows={3}
                   {...register('message')}
-                  className="w-full px-4 py-3 bg-white/80 border border-slate-200 rounded-xl text-sm font-medium focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all"
+                  className="w-full px-4 py-3 bg-white/80 border border-slate-200 rounded-xl text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#C9A24B]/20 focus:border-[#C9A24B] transition-all"
                 />
               </div>
 
@@ -170,10 +170,10 @@ export const AdmissionsForm: React.FC = () => {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full flex items-center justify-center gap-2 py-3.5 px-6 rounded-xl text-white font-semibold bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 shadow-lg shadow-indigo-500/25 active:scale-[0.98] transition-all disabled:opacity-50 pointer-events-auto cursor-pointer"
+                className="w-full flex items-center justify-center gap-2 py-3.5 px-6 rounded-xl text-[#12201F] font-bold bg-[#C9A24B] hover:bg-[#DEC17E] shadow-lg shadow-black/5 active:scale-[0.98] transition-all disabled:opacity-50 pointer-events-auto cursor-pointer"
               >
                 {loading ? (
-                  <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                  <div className="w-5 h-5 border-2 border-[#12201F] border-t-transparent rounded-full animate-spin" />
                 ) : (
                   <>
                     <span>Confirm Live Demo Session</span>
@@ -191,16 +191,16 @@ export const AdmissionsForm: React.FC = () => {
             transition={{ duration: 0.3 }}
             className="flex flex-col items-center text-center py-10"
           >
-            <div className="w-16 h-16 rounded-full bg-emerald-50 border border-emerald-100 flex items-center justify-center text-emerald-500 mb-6">
+            <div className="w-16 h-16 rounded-full bg-[#DEC17E]/20 border border-[#DEC17E]/30 flex items-center justify-center text-[#C9A24B] mb-6">
               <CheckCircle2 className="w-8 h-8" />
             </div>
-            <h3 className="text-2xl font-bold text-slate-900">Demo Scheduled!</h3>
-            <p className="text-slate-500 text-sm max-w-sm mt-3 leading-relaxed">
+            <h3 className="text-2xl font-bold text-[#12201F]">Demo Scheduled!</h3>
+            <p className="text-[#7C8E8D] text-sm max-w-sm mt-3 leading-relaxed font-medium">
               We've received your request. An enterprise implementation consultant will reach out to you at the email provided within 1 business hour to share calendar invites.
             </p>
             <button
               onClick={() => setIsSubmitted(false)}
-              className="mt-8 px-6 py-2 bg-slate-900 text-white rounded-xl text-xs font-semibold hover:bg-slate-800 transition active:scale-[0.98] cursor-pointer"
+              className="mt-8 px-6 py-2.5 bg-[#0F3235] text-white rounded-xl text-xs font-bold hover:bg-[#1F5359] transition active:scale-[0.98] cursor-pointer"
             >
               Submit Another Request
             </button>

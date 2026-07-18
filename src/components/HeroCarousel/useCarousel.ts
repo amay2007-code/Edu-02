@@ -34,16 +34,16 @@ export const useCarousel = ({ slidesCount, intervalMs = 2000 }: UseCarouselProps
     setCurrentIndex((prev) => (prev - 1 + slidesCount) % slidesCount);
   }, [slidesCount]);
 
-  // Autoplay effect
+  // Autoplay effect - bulletproof direct state update to prevent stoppage
   useEffect(() => {
     if (reducedMotion || isHovered) return;
 
     const timer = setInterval(() => {
-      goToNext();
+      setCurrentIndex((prev) => (prev + 1) % slidesCount);
     }, intervalMs);
 
     return () => clearInterval(timer);
-  }, [goToNext, intervalMs, isHovered, reducedMotion]);
+  }, [slidesCount, intervalMs, isHovered, reducedMotion]);
 
   // Swipe support
   const handleTouchStart = (e: React.TouchEvent) => {

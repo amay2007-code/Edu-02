@@ -22,8 +22,11 @@ export const HeroSlide: React.FC<HeroSlideProps> = ({
       className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none"
       style={{ zIndex: isActive ? 1 : 0 }}
     >
-      {/* Dark gradient overlay so white text remains perfectly readable */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-slate-950/60 to-black/75 z-10" />
+      {/* Dark teal overlay (55% opacity) for readability */}
+      <div className="absolute inset-0 bg-[#0F3235]/55 z-10" />
+      
+      {/* Subtle animated gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#0F3235]/30 to-[#0F3235]/85 z-10" />
 
       {/* Slight zoom (Ken Burns effect) */}
       <motion.img
