@@ -82,14 +82,14 @@ export function Resources() {
       description: "Laboratory experiments with safety guidelines"
     },
     {
-      title: "Rajasthan Geography Notes",
+      title: "Scottish Highlands Geography Notes",
       subject: "Social Data Structures",
       type: "PDF",
       size: "1.3 MB",
       uploadDate: "Jan 15, 2025",
       uploadedBy: "Dr. Anjali Jain",
       category: "reference",
-      description: "Complete geography of Rajasthan state"
+      description: "Comprehensive geography of the Scottish Highlands"
     }
   ];
 
@@ -115,7 +115,7 @@ export function Resources() {
       url: "https://www.youtube.com/watch?v=5k3S6Zx2R6k"
     },
     {
-      title: "Rajasthan History and Culture",
+      title: "Scottish History and Celtic Culture",
       subject: "Social Data Structures",
       duration: "50m",
       uploadDate: "Jan 26, 2025",
@@ -230,9 +230,9 @@ export function Resources() {
       rating: 4.6
     },
     {
-      title: "Rajasthan Board Resources",
-      url: "https://rajeduboard.rajasthan.gov.in/",
-      description: "Official Rajasthan Board study materials and syllabus",
+      title: "University of Edinburgh Library",
+      url: "https://www.ed.ac.uk/information-services/library-museum-gallery",
+      description: "Official university libraries catalog and databases access",
       category: "reference",
       subject: "All Subjects",
       rating: 4.8
@@ -281,11 +281,11 @@ export function Resources() {
 
   const assignments = [
     {
-      title: "Essay on Rajasthan Culture",
+      title: "Essay on Scottish Enlightenment",
       subject: "Technical Communication",
       dueDate: "Feb 5, 2025",
       status: "active",
-      description: "Write a 500-word essay on the rich cultural heritage of Rajasthan",
+      description: "Write a 500-word essay on the Scottish Enlightenment and its key thinkers",
       submissionLink: "#",
       priority: "high"
     },
@@ -309,21 +309,21 @@ export function Resources() {
       grade: "A+"
     },
     {
-      title: "Data Structures Project - Renewable Energy",
+      title: "Data Structures Project - Wind Energy",
       subject: "Data Structures",
       dueDate: "Jan 30, 2025",
       status: "completed",
-      description: "Create a model showcasing renewable energy sources in Rajasthan",
+      description: "Create a report on offshore wind energy in Scotland",
       submissionLink: "#",
       priority: "high",
       grade: "A"
     },
     {
-      title: "Rajasthan Map Work",
+      title: "Scottish Topography Map Work",
       subject: "Social Data Structures",
       dueDate: "Feb 10, 2025",
       status: "active",
-      description: "Mark major cities, rivers and mountain ranges on Rajasthan map",
+      description: "Mark major cities, lochs, and mountain ranges (Munros) on the map of Scotland",
       submissionLink: "#",
       priority: "medium"
     }
@@ -388,13 +388,13 @@ export function Resources() {
     <!DOCTYPE html>
     <html>
     <head>
-      <title>${item.title} - Rajasthan Institute of Technology</title>
+      <title>${item.title} - University of Edinburgh</title>
       <style>
         body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
-        .header { text-align: center; margin-bottom: 30px; border-bottom: 2px solid #d97706; padding-bottom: 20px; }
-        .school-name { font-size: 28px; font-weight: bold; color: #d97706; margin-bottom: 5px; }
+        .header { text-align: center; margin-bottom: 30px; border-bottom: 2px solid #C9A24B; padding-bottom: 20px; }
+        .school-name { font-size: 28px; font-weight: bold; color: #0F3235; margin-bottom: 5px; }
         .document-title { font-size: 22px; font-weight: bold; margin: 20px 0; text-align: center; }
-        .document-meta { background: #fef3c7; padding: 15px; border-radius: 8px; margin: 20px 0; }
+        .document-meta { background: #F4F1E8; padding: 15px; border-radius: 8px; margin: 20px 0; }
         .content { margin: 20px 0; line-height: 1.6; }
         .footer { margin-top: 40px; text-align: center; font-size: 12px; color: #666; }
         @media print { body { margin: 0; } }
@@ -402,9 +402,8 @@ export function Resources() {
     </head>
     <body>
       <div class="header">
-        <div class="school-name">Rajasthan Institute of Technology</div>
-        <div style="color: #666;">45 Shastri Nagar, Jaipur, Rajasthan - 302016</div>
-        <div style="color: #d97706; font-weight: bold; margin-top: 10px;">राजस्थान पब्लिक स्कूल</div>
+        <div class="school-name">University of Edinburgh</div>
+        <div style="color: #666;">Old College, South Bridge, Edinburgh EH8 9YL</div>
       </div>
       
       <div class="document-title">${item.title}</div>
@@ -445,9 +444,8 @@ export function Resources() {
       </div>
       
       <div class="footer">
-        This study material is provided by Rajasthan Institute of Technology.<br>
+        This study material is provided by the University of Edinburgh.<br>
         For academic purposes only. All rights reserved.<br>
-        <strong>जय राजस्थान!</strong>
       </div>
     </body>
     </html>
@@ -533,7 +531,7 @@ export function Resources() {
     <div className="space-y-6">
       <div>
         <h1>Learning Resources</h1>
-        <p className="text-muted-foreground">Access study materials, video lectures, and external resources - Rajasthan Institute of Technology.</p>
+        <p className="text-muted-foreground">Access study materials, video lectures, and external resources - University of Edinburgh.</p>
       </div>
 
       {/* Search and Filter */}

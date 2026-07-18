@@ -271,8 +271,8 @@ function AppContent() {
             <School className="h-8 w-8 text-white" />
           </div>
           <div className="space-y-2">
-            <h1 className="text-xl font-bold">Rajasthan Institute of Technology</h1>
-            <p className="text-sm text-gray-600">Loading full-stack ERP system...</p>
+            <h1 className="text-xl font-bold">University of Edinburgh</h1>
+            <p className="text-sm text-gray-600">Loading digital campus...</p>
             <div className="flex items-center justify-center gap-2">
               <div className="h-2 w-2 bg-amber-500 rounded-full animate-bounce"></div>
               <div className="h-2 w-2 bg-orange-500 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
@@ -393,79 +393,18 @@ function AppContent() {
     <SidebarProvider>
       <div className="flex min-h-screen w-full bg-background">
         <Sidebar className="border-r border-border/40">
-          <SidebarHeader className="border-b border-border/40 px-6 py-4 bg-sidebar/50">
+          <SidebarHeader className="border-b border-border/40 px-6 py-4 bg-[#0F3235]">
             <div className="flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-amber-500 to-orange-600 shadow-lg">
-                <School className="h-5 w-5 text-white" />
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#C9A24B] text-[#0F3235] shadow-lg">
+                <School className="h-5 w-5" />
               </div>
               <div>
-                <p className="text-base font-semibold text-sidebar-foreground">{t("app.title")}</p>
-                <div className="flex items-center gap-2">
-                  <p className="text-xs text-sidebar-foreground/70">{t("app.title.hindi")}</p>
-                  {backendHealth && (
-                    <Badge variant="secondary" className="text-xs">
-                      <Database className="h-3 w-3 mr-1" />
-                      Full-Stack
-                    </Badge>
-                  )}
-                </div>
+                <p className="text-base font-semibold text-white">{t("app.title")}</p>
               </div>
             </div>
           </SidebarHeader>
           
           <SidebarContent className="px-4 py-2">
-            {/* System Status */}
-            <div className="mb-4 p-3 bg-sidebar-accent/30 rounded-lg border border-sidebar-border/40">
-              <h4 className="text-xs font-medium text-sidebar-foreground/70 mb-2 uppercase tracking-wider">System Status</h4>
-              <div className="space-y-1 text-xs">
-                <div className="flex items-center justify-between">
-                  <span className="text-sidebar-foreground/60 flex items-center gap-1">
-                    {isOnline ? <Wifi className="h-3 w-3" /> : <WifiOff className="h-3 w-3" />}
-                    Connection
-                  </span>
-                  <span className={`font-medium ${isOnline ? 'text-green-600' : 'text-red-600'}`}>
-                    {isOnline ? 'Online' : 'Offline'}
-                  </span>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="text-sidebar-foreground/60 flex items-center gap-1">
-                    <Database className="h-3 w-3" />
-                    Backend
-                  </span>
-                  <span className={`font-medium ${backendHealth ? 'text-green-600' : 'text-amber-600'}`}>
-                    {backendHealth ? 'Active' : 'Checking...'}
-                  </span>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="text-sidebar-foreground/60">Role</span>
-                  <Badge variant="outline" className="text-xs">
-                    {currentUser?.role}
-                  </Badge>
-                </div>
-              </div>
-            </div>
-
-            {/* Quick Stats */}
-            <div className="mb-4 p-3 bg-sidebar-accent/30 rounded-lg border border-sidebar-border/40">
-              <h4 className="text-xs font-medium text-sidebar-foreground/70 mb-2 uppercase tracking-wider">{t("quick.stats")}</h4>
-              <div className="space-y-2 text-xs">
-                <div className="flex items-center justify-between cursor-pointer hover:bg-sidebar-accent/20 rounded p-1 transition-colors" 
-                     onClick={() => handleSectionChange('schedule')}>
-                  <span className="text-sidebar-foreground/60">{t("attendance")}</span>
-                  <span className="font-medium text-green-600">{userProgress.attendanceProgress}%</span>
-                </div>
-                <div className="flex items-center justify-between cursor-pointer hover:bg-sidebar-accent/20 rounded p-1 transition-colors" 
-                     onClick={() => handleSectionChange('fees')}>
-                  <span className="text-sidebar-foreground/60">{t("fees.paid")}</span>
-                  <span className="font-medium text-amber-600">{userProgress.feesProgress}%</span>
-                </div>
-                <div className="flex items-center justify-between cursor-pointer hover:bg-sidebar-accent/20 rounded p-1 transition-colors" 
-                     onClick={() => handleSectionChange('schedule')}>
-                  <span className="text-sidebar-foreground/60">{t("today.classes")}</span>
-                  <span className="font-medium text-blue-600">{quickStats.todayClasses}</span>
-                </div>
-              </div>
-            </div>
 
             {navigationItems.map((group, index) => (
               <SidebarGroup key={index}>
@@ -505,8 +444,8 @@ function AppContent() {
             {/* Student Profile */}
             <div className="flex items-center gap-3 mb-4 p-3 bg-sidebar-accent/20 rounded-lg border border-sidebar-border/40">
               <Avatar className="h-10 w-10 border-2 border-sidebar-border/40">
-                <AvatarImage src="https://images.unsplash.com/photo-1659464760792-c9a822041f2e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxpbmRpYW4lMjBzY2hvb2wlMjBib3klMjByYWphc3RoYW4lMjBzdHVkZW50fGVufDF8fHx8MTc1ODkyNzEyNHww&ixlib=rb-4.1.0&q=80&w=150&h=150&fit=crop&crop=face" />
-                <AvatarFallback className="bg-gradient-to-br from-blue-500 to-purple-600 text-white font-semibold">
+                <AvatarImage src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=150&h=150&fit=crop&crop=face" />
+                <AvatarFallback className="bg-gradient-to-br from-blue-500 to-[#C9A24B] text-[#0F3235] font-semibold">
                   {currentUser?.name?.split(' ').map(n => n[0]).join('').toUpperCase() || 'U'}
                 </AvatarFallback>
               </Avatar>
@@ -637,60 +576,7 @@ function AppContent() {
                   </DialogContent>
                 </Dialog>
 
-                {/* Language Switcher */}
-                <Dialog>
-                  <DialogTrigger asChild>
-                    <Button variant="ghost" size="sm" title="Change Language">
-                      <Languages className="h-4 w-4 mr-2" />
-                      <span className="hidden sm:inline">
-                        {language === "en" ? "EN" : language === "hi" ? "हिं" : "राज"}
-                      </span>
-                    </Button>
-                  </DialogTrigger>
-                  <DialogContent className="sm:max-w-xs">
-                    <DialogHeader>
-                      <DialogTitle className="flex items-center gap-2">
-                        <Languages className="h-5 w-5" />
-                        Select Language / भाषा चुनें
-                      </DialogTitle>
-                    </DialogHeader>
-                    <div className="space-y-2">
-                      <Button
-                        variant={language === "en" ? "default" : "outline"}
-                        className="w-full justify-start"
-                        onClick={() => {
-                          setLanguage("en");
-                          toast.success("Language changed to Technical Communication");
-                        }}
-                      >
-                        <span className="mr-2">🇮🇳</span>
-                        Technical Communication
-                      </Button>
-                      <Button
-                        variant={language === "hi" ? "default" : "outline"}
-                        className="w-full justify-start"
-                        onClick={() => {
-                          setLanguage("hi");
-                          toast.success("भाषा हिंदी में बदल गई");
-                        }}
-                      >
-                        <span className="mr-2">🇮🇳</span>
-                        हिंदी (Operating Systems)
-                      </Button>
-                      <Button
-                        variant={language === "raj" ? "default" : "outline"}
-                        className="w-full justify-start"
-                        onClick={() => {
-                          setLanguage("raj");
-                          toast.success("भाषा राजस्थानी में बदल गई");
-                        }}
-                      >
-                        <span className="mr-2">🇮🇳</span>
-                        राजस्थानी (Rajasthani)
-                      </Button>
-                    </div>
-                  </DialogContent>
-                </Dialog>
+
 
                 {/* AI Chatbot Toggle */}
                 <Button

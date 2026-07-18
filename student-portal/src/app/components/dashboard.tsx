@@ -53,13 +53,13 @@ export function Dashboard({ onNavigate }: DashboardProps) {
   });
 
   const studentInfo = {
-    name: "Arjun Singh",
-    course: "10-A",
-    rollNumber: "2025-10-015",
-    fatherName: "Mr. Rajesh Singh",
-    phone: "+91-98765-43210",
-    email: "arjun.singh@rps.edu.in",
-    address: "45 Shastri Nagar, Jaipur, Rajasthan 302016"
+    name: "Jane Doe",
+    course: "BSc Computer Science",
+    rollNumber: "S2510015",
+    fatherName: "Mr. Robert Doe",
+    phone: "+44 131 650 1000",
+    email: "demo@ed.ac.uk",
+    address: "Old College, South Bridge, Edinburgh EH8 9YL"
   };
 
   const currentAcademicYear = "2025-26";
@@ -202,15 +202,15 @@ export function Dashboard({ onNavigate }: DashboardProps) {
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-4">
             <Avatar className="h-16 w-16 border-4 border-white shadow-lg">
-              <AvatarImage src="https://images.unsplash.com/photo-1659464760792-c9a822041f2e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxpbmRpYW4lMjBzY2hvb2wlMjBib3klMjByYWphc3RoYW4lMjBzdHVkZW50fGVufDF8fHx8MTc1ODkyNzEyNHww&ixlib=rb-4.1.0&q=80&w=150&h=150&fit=crop&crop=face" />
-              <AvatarFallback className="bg-gradient-to-br from-blue-500 to-purple-600 text-white text-lg font-bold">AS</AvatarFallback>
+              <AvatarImage src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=150&h=150&fit=crop&crop=face" />
+              <AvatarFallback className="bg-gradient-to-br from-[#0F3235] to-[#C9A24B] text-white text-lg font-bold">JD</AvatarFallback>
             </Avatar>
             <div>
               <h1 className="text-2xl font-bold text-gray-900 dark:text-gray-100">
                 {t("dashboard.welcome")} 🎓
               </h1>
               <p className="text-gray-600 dark:text-gray-300 mt-1">
-                {t("course")} {studentInfo.class} • {t("student.roll")} • {t("academic.year")}
+                {t("course")} {studentInfo.course} • {t("student.roll")} • {t("academic.year")}
               </p>
               <div className="flex items-center gap-4 mt-2 text-sm text-gray-500 dark:text-gray-400">
                 <span className="flex items-center gap-1">
@@ -226,7 +226,7 @@ export function Dashboard({ onNavigate }: DashboardProps) {
                 </span>
                 <span className="flex items-center gap-1">
                   <MapPin className="h-4 w-4" />
-                  {t("app.title")}, Jaipur
+                  {t("app.title")}, Edinburgh
                 </span>
               </div>
             </div>

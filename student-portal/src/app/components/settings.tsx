@@ -47,14 +47,14 @@ interface SettingsProps {
 export function Settings({ onThemeChange, isDarkMode }: SettingsProps = {}) {
   const { language, setLanguage, t } = useLanguage();
   const [profileData, setProfileData] = useState({
-    displayName: "Arjun Singh",
-    username: "arjun.singh",
-    email: "arjun.singh@rps.edu.in",
-    phone: "+91 9876543210",
+    displayName: "Jane Doe",
+    username: "jane.doe",
+    email: "demo@ed.ac.uk",
+    phone: "+44 131 650 1000",
     bloodGroup: "O+",
-    fatherName: "Mr. Rajesh Singh",
-    motherName: "Mrs. Sunita Singh",
-    address: "45 Shastri Nagar, Jaipur, Rajasthan 302016"
+    fatherName: "Mr. Robert Doe",
+    motherName: "Mrs. Emily Doe",
+    address: "Old College, South Bridge, Edinburgh EH8 9YL"
   });
 
   const [preferences, setPreferences] = useState({

@@ -94,24 +94,24 @@ export function FloatingActionMenu({ onNavigate, onOpenChatbot }: FloatingAction
         <!DOCTYPE html>
         <html>
         <head>
-          <title>Student Progress Report - Rajasthan Institute of Technology</title>
+          <title>Student Progress Report - University of Edinburgh</title>
           <style>
             body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
-            .header { text-align: center; margin-bottom: 30px; border-bottom: 3px solid #d97706; padding-bottom: 20px; }
-            .school-name { font-size: 28px; font-weight: bold; color: #d97706; margin-bottom: 5px; }
+            .header { text-align: center; margin-bottom: 30px; border-bottom: 3px solid #C9A24B; padding-bottom: 20px; }
+            .school-name { font-size: 28px; font-weight: bold; color: #0F3235; margin-bottom: 5px; }
             .report-section { margin: 20px 0; padding: 15px; border: 1px solid #e5e7eb; border-radius: 8px; }
             .grade-table { width: 100%; border-collapse: collapse; margin: 10px 0; }
             .grade-table th, .grade-table td { border: 1px solid #d1d5db; padding: 8px; text-align: left; }
             .grade-table th { background-color: #f3f4f6; }
-            .summary { background: #fef3c7; padding: 15px; border-radius: 8px; margin: 20px 0; }
+            .summary { background: #F4F1E8; padding: 15px; border-radius: 8px; margin: 20px 0; }
           </style>
         </head>
         <body>
           <div class="header">
-            <div class="school-name">Rajasthan Institute of Technology</div>
+            <div class="school-name">University of Edinburgh</div>
             <h2>Student Progress Report</h2>
-            <p>Academic Year: 2024-25 | Class: 10th | Student: Arjun Singh</p>
-            <p>Generated on: ${new Date().toLocaleDateString('en-IN')}</p>
+            <p>Academic Year: 2024-25 | Class: BSc CS | Student: Jane Doe</p>
+            <p>Generated on: ${new Date().toLocaleDateString('en-GB')}</p>
           </div>
           
           <div class="report-section">
@@ -153,9 +153,9 @@ export function FloatingActionMenu({ onNavigate, onOpenChatbot }: FloatingAction
           </div>
           
           <div style="text-align: center; margin-top: 30px; padding-top: 20px; border-top: 1px solid #e5e7eb;">
-            <p><strong>Rajasthan Institute of Technology</strong><br>
-            Shastri Nagar, Jaipur, Rajasthan 302016<br>
-            Phone: +91 141 234 5678 | Email: contact@rps.edu.in</p>
+            <p><strong>University of Edinburgh</strong><br>
+            Old College, South Bridge, Edinburgh EH8 9YL<br>
+            Phone: +44 131 650 1000 | Email: contact@ed.ac.uk</p>
           </div>
         </body>
         </html>
@@ -165,7 +165,7 @@ export function FloatingActionMenu({ onNavigate, onOpenChatbot }: FloatingAction
         const url = URL.createObjectURL(blob);
         const a = document.createElement('a');
         a.href = url;
-        a.download = `RIT_Student_Progress_Report_${new Date().toISOString().split('T')[0]}.html`;
+        a.download = `UOE_Student_Progress_Report_${new Date().toISOString().split('T')[0]}.html`;
         document.body.appendChild(a);
         a.click();
         document.body.removeChild(a);
@@ -213,8 +213,8 @@ export function FloatingActionMenu({ onNavigate, onOpenChatbot }: FloatingAction
       color: "from-indigo-500 to-purple-500",
       action: () => {
         const shareData = {
-          title: "My Academic Progress - Rajasthan Institute of Technology",
-          text: "Check out my academic progress at Rajasthan Institute of Technology! Overall Grade: A (84.6%)",
+          title: "My Academic Progress - University of Edinburgh",
+          text: "Check out my academic progress at the University of Edinburgh! Overall Grade: A (84.6%)",
           url: window.location.href
         };
         

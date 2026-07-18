@@ -52,30 +52,27 @@ export function Schedule() {
     }
   ]);
 
-  // Indian National and Rajasthani holidays for 2025
+  // Scotland Bank Holidays for 2025
   const holidays = [
     // January 2025
-    { date: new Date(2025, 0, 1), name: "New Year's Day", type: "national", description: "नव वर्ष" },
-    { date: new Date(2025, 0, 26), name: "Republic Day", type: "national", description: "गणतंत्र दिवस" },
-    { date: new Date(2025, 0, 14), name: "Makar Sankranti", type: "regional", description: "मकर संक्रांति" },
-    
-    // February 2025
-    { date: new Date(2025, 1, 13), name: "Maha Shivratri", type: "religious", description: "महा शिवरात्रि" },
-    { date: new Date(2025, 1, 14), name: "Vasant Panchami", type: "religious", description: "वसंत पंचमी" },
-    
-    // March 2025
-    { date: new Date(2025, 2, 13), name: "Holi", type: "national", description: "होली" },
-    { date: new Date(2025, 2, 14), name: "Dhulandi", type: "regional", description: "धुलेंडी" },
-    { date: new Date(2025, 2, 30), name: "Rajasthan Day", type: "state", description: "राजस्थान दिवस" },
+    { date: new Date(2025, 0, 1), name: "New Year's Day", type: "national", description: "Scotland Bank Holiday" },
+    { date: new Date(2025, 0, 2), name: "2nd January Bank Holiday", type: "regional", description: "Scotland Bank Holiday" },
     
     // April 2025
-    { date: new Date(2025, 3, 13), name: "Ram Navami", type: "religious", description: "राम नवमी" },
-    { date: new Date(2025, 3, 14), name: "Ambedkar Jayanti", type: "national", description: "अम्बेडकर जयंती" },
-    { date: new Date(2025, 3, 18), name: "Good Friday", type: "national", description: "गुड फ्राइडे" },
+    { date: new Date(2025, 3, 18), name: "Good Friday", type: "national", description: "Scotland Bank Holiday" },
+    { date: new Date(2025, 3, 21), name: "Easter Monday", type: "national", description: "Scotland Bank Holiday" },
     
     // May 2025
-    { date: new Date(2025, 4, 1), name: "May Day", type: "national", description: "मजदूर दिवस" },
-    { date: new Date(2025, 4, 12), name: "Buddha Purnima", type: "religious", description: "बुद्ध पूर्णिमा" },
+    { date: new Date(2025, 4, 5), name: "Early May Bank Holiday", type: "national", description: "Scotland Bank Holiday" },
+    { date: new Date(2025, 4, 26), name: "Spring Bank Holiday", type: "national", description: "Scotland Bank Holiday" },
+    
+    // August 2025
+    { date: new Date(2025, 7, 4), name: "Summer Bank Holiday", type: "regional", description: "Scotland Bank Holiday" },
+    
+    // December 2025
+    { date: new Date(2025, 11, 1), name: "St Andrew's Day", type: "regional", description: "Scottish National Day" },
+    { date: new Date(2025, 11, 25), name: "Christmas Day", type: "national", description: "Scotland Bank Holiday" },
+    { date: new Date(2025, 11, 26), name: "Boxing Day", type: "national", description: "Scotland Bank Holiday" },
     
     // August 2025
     { date: new Date(2025, 7, 15), name: "Independence Day", type: "national", description: "स्वतंत्रता दिवस" },
@@ -355,11 +352,11 @@ export function Schedule() {
     <!DOCTYPE html>
     <html>
     <head>
-      <title>Weekly Schedule - Rajasthan Institute of Technology</title>
+      <title>Weekly Schedule - University of Edinburgh</title>
       <style>
         body { font-family: Arial, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px; }
-        .header { text-align: center; margin-bottom: 30px; border-bottom: 2px solid #d97706; padding-bottom: 20px; }
-        .school-name { font-size: 28px; font-weight: bold; color: #d97706; margin-bottom: 5px; }
+        .header { text-align: center; margin-bottom: 30px; border-bottom: 2px solid #C9A24B; padding-bottom: 20px; }
+        .school-name { font-size: 28px; font-weight: bold; color: #0F3235; margin-bottom: 5px; }
         .school-address { font-size: 14px; color: #666; margin-bottom: 10px; }
         .schedule-title { font-size: 22px; font-weight: bold; margin: 20px 0; }
         .day-schedule { margin: 20px 0; break-inside: avoid; }
@@ -373,13 +370,12 @@ export function Schedule() {
     </head>
     <body>
       <div class="header">
-        <div class="school-name">Rajasthan Institute of Technology</div>
-        <div class="school-address">45 Shastri Nagar, Jaipur, Rajasthan - 302016<br>Phone: +91-141-2345678 | Email: admin@rps.edu.in</div>
-        <div style="color: #d97706; font-weight: bold; margin-top: 10px;">राजस्थान पब्लिक स्कूल</div>
+        <div class="school-name">University of Edinburgh</div>
+        <div class="school-address">Old College, South Bridge, Edinburgh EH8 9YL<br>Phone: +44 131 650 1000 | Email: contact@ed.ac.uk</div>
       </div>
       
-      <div class="schedule-title">WEEKLY CLASS SCHEDULE - CS Section A</div>
-      <div style="text-align: center; margin-bottom: 20px; color: #666;">Student: Arjun Singh | Academic Year: 2025-26</div>
+      <div class="schedule-title">WEEKLY CLASS SCHEDULE - BSc CS Year 2</div>
+      <div style="text-align: center; margin-bottom: 20px; color: #666;">Student: Jane Doe | Academic Year: 2025-26</div>
       
       ${weeklySchedule.map(day => `
         <div class="day-schedule">
@@ -401,9 +397,8 @@ export function Schedule() {
       `).join('')}
       
       <div class="footer">
-        This is an official schedule from Rajasthan Institute of Technology.<br>
-        Generated on ${new Date().toLocaleDateString('en-IN')}<br>
-        <strong>जय राजस्थान!</strong>
+        This is an official schedule from the University of Edinburgh.<br>
+        Generated on ${new Date().toLocaleDateString('en-GB')}<br>
       </div>
     </body>
     </html>

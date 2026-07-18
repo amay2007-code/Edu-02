@@ -18,15 +18,15 @@ export function PersonalInfo() {
   const [isEditing, setIsEditing] = useState(false);
   const [isHostelOptedIn, setIsHostelOptedIn] = useState(true);
   const [editedData, setEditedData] = useState({
-    firstName: "Arjun",
-    lastName: "Singh",
-    email: "arjun.singh@rps.edu.in",
-    phone: "+91 9876543210",
-    address: "45 Shastri Nagar, Jaipur, Rajasthan 302016",
+    firstName: "Jane",
+    lastName: "Doe",
+    email: "demo@ed.ac.uk",
+    phone: "+44 131 650 1000",
+    address: "Old College, South Bridge, Edinburgh EH8 9YL",
     bloodGroup: "O+",
-    course: "10-A",
-    hostelName: "Rajasthan Hostel",
-    roomNumber: "A-105"
+    class: "BSc Computer Science",
+    hostelName: "Pollock Halls (Chancellors Court)",
+    roomNumber: "C-204"
   });
 
   const handleSave = () => {
@@ -51,8 +51,8 @@ export function PersonalInfo() {
           <CardContent className="space-y-4">
             <div className="flex justify-center">
               <Avatar className="h-24 w-24">
-                <AvatarImage src="https://images.unsplash.com/photo-1659464760792-c9a822041f2e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxpbmRpYW4lMjBzY2hvb2wlMjBib3klMjByYWphc3RoYW4lMjBzdHVkZW50fGVufDF8fHx8MTc1ODkyNzEyNHww&ixlib=rb-4.1.0&q=80&w=150&h=150&fit=crop&crop=face" />
-                <AvatarFallback>RS</AvatarFallback>
+                <AvatarImage src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=150&h=150&fit=crop&crop=face" />
+                <AvatarFallback>JD</AvatarFallback>
               </Avatar>
             </div>
             <Dialog>
@@ -295,16 +295,16 @@ export function PersonalInfo() {
         <CardContent className="space-y-6">
           <div className="grid gap-4 md:grid-cols-2">
             <div className="space-y-2">
-              <Label htmlFor="school">School Name</Label>
-              <Input id="school" defaultValue="Rajasthan Institute of Technology" disabled />
+              <Label htmlFor="school">College Name</Label>
+              <Input id="school" defaultValue="University of Edinburgh" disabled />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="board">Education Board</Label>
-              <Input id="board" defaultValue="RBSE (Rajasthan Board)" disabled />
+              <Label htmlFor="board">University Body</Label>
+              <Input id="board" defaultValue="Senate of the University" disabled />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="stream">Stream</Label>
-              <Input id="stream" defaultValue="Data Structures" />
+              <Label htmlFor="stream">Specialization</Label>
+              <Input id="stream" defaultValue="Software Engineering" />
             </div>
             <div className="space-y-2">
               <Label htmlFor="classTeacher">Faculty Advisor</Label>
@@ -350,16 +350,16 @@ export function PersonalInfo() {
             </div>
             <div className="space-y-2">
               <Label htmlFor="parentPhone">Parent Contact</Label>
-              <Input id="parentPhone" type="tel" defaultValue="+91 9876543211" />
+              <Input id="parentPhone" type="tel" defaultValue="+44 131 650 1001" />
             </div>
             <div className="space-y-2">
               <Label htmlFor="parentEmail">Parent Email</Label>
-              <Input id="parentEmail" type="email" defaultValue="rajesh.singh@rajasthan.gov.in" />
+              <Input id="parentEmail" type="email" defaultValue="robert.doe@ed.ac.uk" />
             </div>
           </div>
           <div className="space-y-2">
             <Label htmlFor="emergencyContact">Emergency Contact</Label>
-            <Input id="emergencyContact" defaultValue="Uncle - Ravi Singh (+91 9876543212)" />
+            <Input id="emergencyContact" defaultValue="Uncle - John Doe (+44 7700 900077)" />
           </div>
         </CardContent>
       </Card>

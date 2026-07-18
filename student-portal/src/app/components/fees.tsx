@@ -84,11 +84,11 @@ export function Fees() {
   
   const currentAcademicYear = "2025-26";
   const studentInfo = {
-    name: "Arjun Singh",
-    course: "10-A",
-    rollNumber: "2025-10-015",
-    fatherName: "Mr. Rajesh Singh",
-    address: "45 Shastri Nagar, Jaipur, Rajasthan 302016"
+    name: "Jane Doe",
+    class: "BSc Computer Science",
+    rollNumber: "S2510015",
+    fatherName: "Mr. Robert Doe",
+    address: "Old College, South Bridge, Edinburgh EH8 9YL"
   };
 
   // Fee structure with automated calculations
@@ -199,20 +199,18 @@ export function Fees() {
         .footer { margin-top: 50px; text-align: center; font-size: 12px; color: #666; border-top: 2px solid #e5e7eb; padding-top: 20px; }
         .signature { margin-top: 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 50px; }
         .signature-box { text-align: center; padding: 20px; border: 1px dashed #d1d5db; border-radius: 8px; }
-        .rajasthan-seal { text-align: center; margin: 20px 0; color: #d97706; font-weight: bold; font-size: 18px; }
-        .amount-words { background: #fffbeb; padding: 15px; border-radius: 8px; margin: 20px 0; border-left: 5px solid #f59e0b; }
+        .rajasthan-seal { text-align: center; margin: 20px 0; color: #0F3235; font-weight: bold; font-size: 18px; }
+        .amount-words { background: #fffbeb; padding: 15px; border-radius: 8px; margin: 20px 0; border-left: 5px solid #C9A24B; }
         @media print { body { margin: 0; } }
       </style>
     </head>
     <body>
       <div class="header">
-        <div class="school-name">Rajasthan Institute of Technology</div>
+        <div class="school-name">University of Edinburgh</div>
         <div class="school-address">
-          45 Shastri Nagar, Jaipur, Rajasthan - 302016<br>
-          Phone: +91-141-2345678 | Email: admin@rps.edu.in<br>
-          CBSE Affiliation No: 1234567 | School Code: 12345
+          Old College, South Bridge, Edinburgh EH8 9YL<br>
+          Phone: +44 131 650 1000 | Email: accounts@ed.ac.uk<br>
         </div>
-        <div class="rajasthan-seal">राजस्थान पब्लिक स्कूल</div>
       </div>
       
       <div class="receipt-title">OFFICIAL FEE RECEIPT</div>
@@ -281,10 +279,9 @@ export function Fees() {
       </div>
       
       <div class="footer">
-        <p><strong>This is a computer generated receipt from Rajasthan Institute of Technology</strong></p>
+        <p><strong>This is a computer generated receipt from the University of Edinburgh</strong></p>
         <p>For any queries regarding fees, please contact the accounts office</p>
-        <p>Email: accounts@rps.edu.in | Phone: +91-141-2345678 Ext: 101</p>
-        <div class="rajasthan-seal">जय राजस्थान!</div>
+        <p>Email: accounts@ed.ac.uk | Phone: +44 131 650 1000 Ext: 101</p>
       </div>
     </body>
     </html>
@@ -485,14 +482,14 @@ export function Fees() {
         key: RAZORPAY_KEY_ID,
         amount: order.amount,
         currency: "INR",
-        name: "Rajasthan Institute of Technology",
+        name: "University of Edinburgh",
         description: `Fee Payment for ${studentInfo.name}`,
-        image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=150&h=150&fit=crop&crop=center", // School logo
+        image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=150&h=150&fit=crop&crop=center", // Logo
         order_id: order.id,
         handler: handlePaymentSuccess,
         prefill: {
           name: studentInfo.name,
-          email: "arjun.singh@student.rps.edu.in",
+          email: "demo@ed.ac.uk",
           contact: "+91-9876543210"
         },
         notes: {
@@ -535,35 +532,33 @@ export function Fees() {
     <!DOCTYPE html>
     <html>
     <head>
-      <title>Fee Structure - Rajasthan Institute of Technology</title>
+      <title>Fee Structure - University of Edinburgh</title>
       <style>
         body { font-family: Arial, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px; }
-        .header { text-align: center; margin-bottom: 30px; border-bottom: 3px solid #d97706; padding-bottom: 20px; }
-        .school-name { font-size: 32px; font-weight: bold; color: #d97706; margin-bottom: 8px; }
+        .header { text-align: center; margin-bottom: 30px; border-bottom: 3px solid #C9A24B; padding-bottom: 20px; }
+        .school-name { font-size: 32px; font-weight: bold; color: #0F3235; margin-bottom: 8px; }
         .school-address { font-size: 14px; color: #666; margin-bottom: 15px; }
-        .document-title { font-size: 24px; font-weight: bold; margin: 25px 0; text-align: center; background: #fef3c7; padding: 15px; border-radius: 8px; }
-        .student-info { background: #f0f9ff; padding: 20px; border-radius: 10px; margin: 25px 0; border-left: 5px solid #0ea5e9; }
+        .document-title { font-size: 24px; font-weight: bold; margin: 25px 0; text-align: center; background: #F4F1E8; padding: 15px; border-radius: 8px; }
+        .student-info { background: #f0f9ff; padding: 20px; border-radius: 10px; margin: 25px 0; border-left: 5px solid #C9A24B; }
         .table { width: 100%; border-collapse: collapse; margin: 25px 0; }
         .table th, .table td { border: 2px solid #e5e7eb; padding: 15px; text-align: left; }
-        .table th { background-color: #fef3c7; font-weight: bold; font-size: 16px; }
+        .table th { background-color: #F4F1E8; font-weight: bold; font-size: 16px; }
         .table td { font-size: 14px; }
         .total-row { background-color: #f9fafb; font-weight: bold; font-size: 16px; }
         .payment-terms { background: #f0fdf4; padding: 20px; border-radius: 10px; margin: 25px 0; border-left: 5px solid #22c55e; }
         .footer { margin-top: 50px; text-align: center; font-size: 12px; color: #666; border-top: 2px solid #e5e7eb; padding-top: 20px; }
-        .rajasthan-text { color: #d97706; font-weight: bold; font-size: 18px; margin: 15px 0; }
+        .rajasthan-text { color: #0F3235; font-weight: bold; font-size: 18px; margin: 15px 0; }
         .amount { font-weight: bold; color: #0f172a; }
         @media print { body { margin: 0; } .no-print { display: none; } }
       </style>
     </head>
     <body>
       <div class="header">
-        <div class="school-name">Rajasthan Institute of Technology</div>
+        <div class="school-name">University of Edinburgh</div>
         <div class="school-address">
-          45 Shastri Nagar, Jaipur, Rajasthan - 302016<br>
-          Phone: +91-141-2345678 | Email: admin@rps.edu.in<br>
-          CBSE Affiliation No: 1234567 | School Code: 12345
+          Old College, South Bridge, Edinburgh EH8 9YL<br>
+          Phone: +44 131 650 1000 | Email: accounts@ed.ac.uk<br>
         </div>
-        <div class="rajasthan-text">राजस्थान पब्लिक स्कूल</div>
       </div>
       
       <div class="document-title">ANNUAL FEE STRUCTURE ${currentAcademicYear}</div>
@@ -641,9 +636,8 @@ export function Fees() {
       </div>
       
       <div class="footer">
-        <p><strong>This is an official fee structure document from Rajasthan Institute of Technology</strong></p>
-        <p>For any fee-related queries, contact: accounts@rps.edu.in | +91-141-2345678</p>
-        <div class="rajasthan-text" style="font-size: 16px; margin-top: 15px;">जय राजस्थान!</div>
+        <p><strong>This is an official fee structure document from the University of Edinburgh</strong></p>
+        <p>For any fee-related queries, contact: accounts@ed.ac.uk | +44 131 650 1000</p>
       </div>
     </body>
     </html>
@@ -654,7 +648,7 @@ export function Fees() {
     const url = URL.createObjectURL(blob);
     const link = document.createElement('a');
     link.href = url;
-    link.download = `RIT_Fee_Structure_${currentAcademicYear}_${studentInfo.name.replace(/\s+/g, '_')}.html`;
+    link.download = `UOE_Fee_Structure_${currentAcademicYear}_${studentInfo.name.replace(/\s+/g, '_')}.html`;
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -769,13 +763,11 @@ export function Fees() {
                 </head>
                 <body>
                   <div class="header">
-                    <div class="school-name">Rajasthan Institute of Technology</div>
+                    <div class="school-name">University of Edinburgh</div>
                     <div class="school-address">
-                      45 Shastri Nagar, Jaipur, Rajasthan - 302016<br>
-                      Phone: +91-141-2345678 | Email: admin@rps.edu.in<br>
-                      CBSE Affiliation No: 1234567 | School Code: 12345
+                      Old College, South Bridge, Edinburgh EH8 9YL<br>
+                      Phone: +44 131 650 1000 | Email: accounts@ed.ac.uk<br>
                     </div>
-                    <div class="rajasthan-text">राजस्थान पब्लिक स्कूल</div>
                   </div>
                   
                   <div class="document-title">ANNUAL FEE STRUCTURE ${currentAcademicYear}</div>
@@ -848,14 +840,9 @@ export function Fees() {
                       <div>• Credit/Debit Cards</div>
                       <div>• Cash (at school office only)</div>
                       <div>• Bank Transfer/NEFT</div>
-                      <div>• Digital Wallets</div>
-                    </div>
-                  </div>
-                  
                   <div class="footer">
-                    <p><strong>This is an official fee structure document from Rajasthan Institute of Technology</strong></p>
-                    <p>For any fee-related queries, contact: accounts@rps.edu.in | +91-141-2345678</p>
-                    <div class="rajasthan-text" style="font-size: 16px; margin-top: 15px;">जय राजस्थान!</div>
+                    <p><strong>This is an official fee structure document from the University of Edinburgh</strong></p>
+                    <p>For any fee-related queries, contact: accounts@ed.ac.uk | +44 131 650 1000</p>
                   </div>
                 </body>
                 </html>
@@ -887,11 +874,11 @@ export function Fees() {
                 <!DOCTYPE html>
                 <html>
                 <head>
-                  <title>All Fee Receipts - Rajasthan Institute of Technology</title>
+                  <title>All Fee Receipts - University of Edinburgh</title>
                   <style>
                     body { font-family: Arial, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px; }
-                    .header { text-align: center; margin-bottom: 30px; border-bottom: 3px solid #d97706; padding-bottom: 20px; }
-                    .school-name { font-size: 28px; font-weight: bold; color: #d97706; margin-bottom: 5px; }
+                    .header { text-align: center; margin-bottom: 30px; border-bottom: 3px solid #C9A24B; padding-bottom: 20px; }
+                    .school-name { font-size: 28px; font-weight: bold; color: #0F3235; margin-bottom: 5px; }
                     .receipt-summary { background: #f8fafc; padding: 20px; border-radius: 10px; margin: 20px 0; }
                     .receipt-item { border: 1px solid #e2e8f0; padding: 15px; margin: 10px 0; border-radius: 8px; background: white; }
                     .footer { margin-top: 40px; text-align: center; font-size: 12px; color: #666; }
@@ -900,7 +887,7 @@ export function Fees() {
                 </head>
                 <body>
                   <div class="header">
-                    <div class="school-name">Rajasthan Institute of Technology</div>
+                    <div class="school-name">University of Edinburgh</div>
                     <h2>ALL FEE RECEIPTS SUMMARY</h2>
                     <p>Student: ${studentInfo.name} | Class: ${studentInfo.class} | Academic Year: ${currentAcademicYear}</p>
                   </div>
@@ -917,8 +904,7 @@ export function Fees() {
                   `).join('')}
                   
                   <div class="footer">
-                    Generated on ${new Date().toLocaleDateString('en-IN')}<br>
-                    <strong>जय राजस्थान!</strong>
+                    Generated on ${new Date().toLocaleDateString('en-GB')}<br>
                   </div>
                 </body>
                 </html>

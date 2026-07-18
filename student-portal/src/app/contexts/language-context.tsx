@@ -15,8 +15,8 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 const translations = {
   en: {
     // App Header & Navigation
-    "app.title": "Rajasthan Institute of Technology",
-    "app.title.hindi": "राजस्थान पब्लिक स्कूल",
+    "app.title": "University of Edinburgh",
+    "app.title.hindi": "University of Edinburgh",
     "academic.year": "Academic Year 2025-26",
     "quick.stats": "Quick Stats",
     "attendance": "Attendance",
@@ -27,7 +27,7 @@ const translations = {
     "dark.mode": "Dark Mode",
     "sign.out": "Sign Out",
     "confirm.sign.out": "Confirm Sign Out",
-    "sign.out.message": "Are you sure you want to sign out from your Rajasthan Institute of Technology college portal?",
+    "sign.out.message": "Are you sure you want to sign out from the University of Edinburgh portal?",
     "cancel": "Cancel",
     "notifications": "Notifications",
     "mark.all.read": "Mark All as Read",

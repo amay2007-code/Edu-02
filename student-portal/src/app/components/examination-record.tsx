@@ -188,17 +188,16 @@ export function ExaminationRecord() {
     </head>
     <body>
       <div class="header">
-        <div class="school-name">Rajasthan Institute of Technology</div>
-        <div class="school-address">45 Shastri Nagar, Jaipur, Rajasthan - 302016<br>Phone: +91-141-2345678 | Email: admin@rps.edu.in</div>
-        <div style="color: #d97706; font-weight: bold; margin-top: 10px;">राजस्थान पब्लिक स्कूल</div>
+        <div class="school-name">University of Edinburgh</div>
+        <div class="school-address">Old College, South Bridge, Edinburgh EH8 9YL<br>Phone: +44 131 650 1000 | Email: exams@ed.ac.uk</div>
       </div>
       
       <div class="transcript-title">ACADEMIC TRANSCRIPT</div>
       
       <div class="student-info">
-        <strong>Student Name:</strong> Arjun Singh<br>
-        <strong>Course:</strong> 10-A<br>
-        <strong>Roll Number:</strong> 2025-10-015<br>
+        <strong>Student Name:</strong> Jane Doe<br>
+        <strong>Course:</strong> BSc Computer Science<br>
+        <strong>Roll Number:</strong> S2510015<br>
         <strong>Academic Year:</strong> 2025-26
       </div>
       
@@ -303,19 +302,18 @@ export function ExaminationRecord() {
     </head>
     <body>
       <div class="header">
-        <div class="school-name">Rajasthan Institute of Technology</div>
-        <div class="school-address">45 Shastri Nagar, Jaipur, Rajasthan - 302016<br>Phone: +91-141-2345678 | Email: admin@rps.edu.in</div>
-        <div style="color: #d97706; font-weight: bold; margin-top: 10px;">राजस्थान पब्लिक स्कूल</div>
+        <div class="school-name">University of Edinburgh</div>
+        <div class="school-address">Old College, South Bridge, Edinburgh EH8 9YL<br>Phone: +44 131 650 1000 | Email: exams@ed.ac.uk</div>
       </div>
       
       <div class="subject-title">${subject.toUpperCase()} - SUBJECT PERFORMANCE REPORT</div>
       
       <div class="student-info">
-        <strong>Student Name:</strong> Arjun Singh<br>
-        <strong>Course:</strong> 10-A<br>
-        <strong>Roll Number:</strong> 2025-10-015<br>
+        <strong>Student Name:</strong> Jane Doe<br>
+        <strong>Course:</strong> BSc Computer Science<br>
+        <strong>Roll Number:</strong> S2510015<br>
         <strong>Academic Year:</strong> 2025-26<br>
-        <strong>Report Generated:</strong> ${new Date().toLocaleDateString('en-IN')}
+        <strong>Report Generated:</strong> ${new Date().toLocaleDateString('en-GB')}
       </div>
       
       <table class="table">

@@ -91,12 +91,12 @@ export function AIChatbot({ onNavigate, isOpen, onToggle }: AIChatbotProps) {
     
     // College Information
     collegeInfo: {
-      name: "Rajasthan Institute of Technology",
-      address: "Shastri Nagar, Jaipur, Rajasthan 302016",
-      phone: "+91 141 234 5678",
-      email: "contact@rps.edu.in",
-      timings: "8:00 AM to 2:00 PM",
-      founded: "1985"
+      name: "University of Edinburgh",
+      address: "Old College, South Bridge, Edinburgh EH8 9YL",
+      phone: "+44 131 650 1000",
+      email: "contact@ed.ac.uk",
+      timings: "9:00 AM to 5:00 PM",
+      founded: "1582"
     },
 
     // Exam schedules
@@ -227,20 +227,20 @@ export function AIChatbot({ onNavigate, isOpen, onToggle }: AIChatbotProps) {
     }
     
     // School information queries
-    else if (message.includes("school") || message.includes("contact") || message.includes("address") || 
+    else if (message.includes("school") || message.includes("university") || message.includes("college") || message.includes("contact") || message.includes("address") || 
              message.includes("स्कूल") || message.includes("संपर्क") || message.includes("पता")) {
       if (language === 'hi') {
-        response = "राजस्थान पब्लिक स्कूल की जानकारी:\n\n🏫 पूरा नाम: राजस्थान पब्लिक स्कूल\n📍 पता: शास्त्री नगर, जयपुर, राजस्थान 302016\n📞 फोन: +91 141 234 5678\n📧 ईमेल: contact@rps.edu.in\n⏰ समय: सुबह 8:00 से दोपहर 2:00 तक\n📅 स्थापना: 1985\n👥 कुल छात्र: 1,200+\n👨‍🏫 शिक्षक: 85+\n\nस्कूल की विशेषताएं:\n• डिजिटल क्लासरूम\n• आधुनिक प्रयोगशाला\n• खेल सुविधाएं\n• पुस्तकालय";
+        response = "यूनिवर्सिटी ऑफ एडिनबर्ग की जानकारी:\n\n🏫 पूरा नाम: यूनिवर्सिटी ऑफ एडिनबर्ग\n📍 पता: ओल्ड कॉलेज, साउथ ब्रिज, एडिनबर्ग EH8 9YL\n📞 फोन: +44 131 650 1000\n📧 ईमेल: contact@ed.ac.uk\n⏰ समय: सुबह 9:00 से शाम 5:00 तक\n📅 स्थापना: 1582\n👥 कुल छात्र: 45,000+\n👨‍🏫 प्रोफेसर: 3,000+\n\nविश्वविद्यालय की विशेषताएं:\n• ऐतिहासिक और आधुनिक परिसर\n• विश्व स्तरीय अनुसंधान प्रयोगशालाएं\n• उत्कृष्ट छात्र संघ\n• प्रसिद्ध पुस्तकालय प्रणाली";
       } else if (language === 'raj') {
-        response = "राजस्थान पब्लिक स्कूल री जानकारी:\n\n🏫 नाम: राजस्थान पब्लिक स्कूल\n📍 पतो: शास्त्री नगर, जयपुर, राजस्थान 302016\n📞 फोन: +91 141 234 5678\n📧 ईमेल: contact@rps.edu.in\n⏰ टाइम: सबेरे 8:00 सूं दोपहर 2:00 तक\n📅 शुरुआत: 1985\n👥 कुल छात्र: 1,200+\n👨‍🏫 टीचर: 85+\n\nस्कूल री खासियतां:\n• डिजिटल क्लासरूम\n• आधुनिक लैब\n• खेल री सुविधा\n• लाइब्रेरी";
+        response = "यूनिवर्सिटी ऑफ एडिनबर्ग री जानकारी:\n\n🏫 नाम: यूनिवर्सिटी ऑफ एडिनबर्ग\n📍 पतो: ओल्ड कॉलेज, साउथ ब्रिज, एडिनबर्ग EH8 9YL\n📞 फोन: +44 131 650 1000\n📧 ईमेल: contact@ed.ac.uk\n⏰ टाइम: सबेरे 9:00 सूं शाम 5:00 तक\n📅 शुरुआत: 1582\n👥 कुल छात्र: 45,000+\n👨‍🏫 टीचर: 3,000+\n\nविश्वविद्यालय री खासियतां:\n• ऐतिहासिक अर आधुनिक कैंपस\n• वर्ल्ड क्लास लैब\n• उत्कृष्ट छात्र संघ\n• मशहूर लाइब्रेरी प्रणाली";
       } else {
-        response = "Rajasthan Institute of Technology Information:\n\n🏫 Full Name: Rajasthan Institute of Technology\n📍 Address: Shastri Nagar, Jaipur, Rajasthan 302016\n📞 Phone: +91 141 234 5678\n📧 Email: contact@rps.edu.in\n⏰ Timing: 8:00 AM to 2:00 PM\n📅 Established: 1985\n👥 Total Students: 1,200+\n👨‍🏫 Professors: 85+\n\nSchool Features:\n• Digital Classrooms\n• Modern Laboratories\n• Sports Facilities\n• Well-equipped Library";
+        response = "University of Edinburgh Information:\n\n🏫 Full Name: University of Edinburgh\n📍 Address: Old College, South Bridge, Edinburgh EH8 9YL\n📞 Phone: +44 131 650 1000\n📧 Email: contact@ed.ac.uk\n⏰ Timing: 9:00 AM to 5:00 PM\n📅 Established: 1582\n👥 Total Students: 45,000+\n👨‍🏫 Professors: 3,000+\n\nUniversity Features:\n• Historic and Modern Campus\n• World-class Research Laboratories\n• Excellent Student Unions\n• Renowned University Library System";
       }
       
       actions = [{
         label: language === 'hi' ? "संपर्क जानकारी कॉपी करें" : language === 'raj' ? "संपर्क री जानकारी कॉपी करो" : "Copy Contact Info",
         action: () => {
-          navigator.clipboard.writeText("Phone: +91 141 234 5678\nEmail: contact@rps.edu.in");
+          navigator.clipboard.writeText("Phone: +44 131 650 1000\nEmail: contact@ed.ac.uk");
           toast.success("Contact information copied to clipboard!");
         }
       }];
