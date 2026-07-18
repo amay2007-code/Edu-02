@@ -689,96 +689,119 @@ export const LandingPage: React.FC = () => {
       </section>
 
       {/* ----------------- FOOTER SECTION ----------------- */}
-      <footer className="bg-[#0F3235] text-white pt-20 pb-10 border-t border-[#1F5359]/30">
+      <motion.footer 
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-50px" }}
+        transition={{ duration: 0.7, ease: "easeOut" }}
+        className="bg-[#0F3235] text-white pt-24 pb-10 border-t border-[#C9A24B]/35 relative overflow-hidden z-10"
+      >
+        <div className="absolute inset-0 bg-gradient-to-b from-[#1F5359]/10 to-transparent pointer-events-none -z-10" />
+        
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-12 pb-16 border-b border-[#1F5359]/20">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-16 pb-16 border-b border-[#1F5359]/20 text-left">
             
-            {/* Brand Column */}
-            <div className="lg:col-span-2 flex flex-col gap-5 text-left">
-              <a href="#" className="flex items-center gap-2.5">
-                <div className="w-9 h-9 rounded-xl bg-[#C9A24B] text-[#0F3235] flex items-center justify-center font-bold">
-                  <GraduationCap className="w-5.5 h-5.5" />
+            {/* Column 1: Brand details (col-span-4) */}
+            <div className="lg:col-span-4 flex flex-col gap-5">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-xl bg-[#C9A24B] text-[#0F3235] flex items-center justify-center font-bold shadow-md shadow-black/10">
+                  <GraduationCap className="w-6 h-6" />
                 </div>
-                <span className="text-base font-extrabold tracking-tight text-white">University of Edinburgh</span>
-              </a>
-              <p className="text-xs text-slate-300 leading-relaxed max-w-sm font-medium">
-                Redesigning college operations through a unified experience for academics, attendance, financials, and campus services.
+                <div>
+                  <h3 className="text-lg font-black tracking-tight text-white leading-none">University of Edinburgh</h3>
+                  <span className="text-[10px] font-bold text-[#DEC17E] uppercase tracking-widest leading-none mt-1.5 block">Smart Digital Campus Experience</span>
+                </div>
+              </div>
+              <p className="text-xs text-slate-300 leading-relaxed font-medium mt-2 max-w-sm italic">
+                "Reimagining the future of campus management through intuitive, accessible, and intelligent digital experiences."
               </p>
-              
-              {/* Social links */}
-              <div className="flex items-center gap-4 mt-2">
-                {['Twitter', 'LinkedIn', 'GitHub', 'YouTube'].map((social) => (
-                  <a key={social} href="#" className="text-xs font-bold text-slate-400 hover:text-[#C9A24B] transition">
-                    {social}
-                  </a>
+            </div>
+
+            {/* Column 2: Quick Links (col-span-2) */}
+            <div className="lg:col-span-2">
+              <h4 className="text-xs font-extrabold uppercase tracking-wider text-[#DEC17E] mb-5 font-sans">Quick Links</h4>
+              <ul className="flex flex-col gap-3 text-xs text-slate-300 font-bold">
+                {['Home', 'Features', 'Academics', 'Admissions', 'Finance', 'Student Services', 'Support'].map((link) => (
+                  <li key={link}>
+                    <a 
+                      href={link === 'Home' ? '#' : `#${link.toLowerCase().replace(' ', '-')}`}
+                      className="hover:text-[#C9A24B] transition-colors focus:outline-none focus:ring-1 focus:ring-[#C9A24B] rounded px-1 -mx-1"
+                    >
+                      {link}
+                    </a>
+                  </li>
                 ))}
+              </ul>
+            </div>
+
+            {/* Column 3: Project Info (col-span-2) */}
+            <div className="lg:col-span-2">
+              <h4 className="text-xs font-extrabold uppercase tracking-wider text-[#DEC17E] mb-5 font-sans">Project Information</h4>
+              <div className="flex flex-col gap-3.5 text-xs text-slate-300 font-semibold">
+                <div>
+                  <p className="text-[10px] uppercase text-slate-400 font-bold tracking-wider leading-none">Institution</p>
+                  <p className="text-white font-bold mt-1.5 leading-none">University of Edinburgh</p>
+                </div>
+                <div>
+                  <p className="text-[10px] uppercase text-slate-400 font-bold tracking-wider leading-none">Prototype</p>
+                  <p className="text-white font-bold mt-1.5 leading-none">Smart Digital Campus Experience</p>
+                </div>
+                <div>
+                  <p className="text-[10px] uppercase text-slate-400 font-bold tracking-wider leading-none">Type</p>
+                  <p className="text-white font-bold mt-1.5 leading-none">Hackathon Prototype</p>
+                </div>
               </div>
             </div>
 
-            {/* Links Columns */}
-            <div className="text-left">
-              <h4 className="text-xs font-extrabold uppercase tracking-wider text-slate-400 mb-4 font-sans">Support</h4>
-              <div className="flex flex-col gap-2.5 text-xs text-slate-300 font-medium">
-                <a href="#" className="hover:text-[#C9A24B] transition">Help Desk</a>
-                <a href="#" className="hover:text-[#C9A24B] transition">IT System Status</a>
-                <a href="#" className="hover:text-[#C9A24B] transition">Admin Portal</a>
-                <a href="#" className="hover:text-[#C9A24B] transition">SSO Login Guide</a>
-              </div>
-            </div>
-
-            <div className="text-left">
-              <h4 className="text-xs font-extrabold uppercase tracking-wider text-slate-400 mb-4 font-sans">Resources</h4>
-              <div className="flex flex-col gap-2.5 text-xs text-slate-300 font-medium">
-                <a href="#" className="hover:text-[#C9A24B] transition">Guides & Blueprints</a>
-                <a href="#" className="hover:text-[#C9A24B] transition">Research Journals</a>
-                <a href="#" className="hover:text-[#C9A24B] transition">API references</a>
-                <a href="#" className="hover:text-[#C9A24B] transition">Library OPAC</a>
-              </div>
-            </div>
-
-            <div className="text-left">
-              <h4 className="text-xs font-extrabold uppercase tracking-wider text-slate-400 mb-4 font-sans">Legal</h4>
-              <div className="flex flex-col gap-2.5 text-xs text-slate-300 font-medium">
-                <a href="#" className="hover:text-[#C9A24B] transition">Privacy Policy</a>
-                <a href="#" className="hover:text-[#C9A24B] transition">Terms of Service</a>
-                <a href="#" className="hover:text-[#C9A24B] transition">GDPR Compliance</a>
-                <a href="#" className="hover:text-[#C9A24B] transition">FERPA Directives</a>
-              </div>
-            </div>
-
-            {/* Newsletter column */}
-            <div className="lg:col-span-2 flex flex-col gap-4 text-left">
-              <h4 className="text-xs font-extrabold uppercase tracking-wider text-slate-400 font-sans">Newsletter</h4>
-              <p className="text-xs text-slate-300 leading-normal font-medium">
-                Sign up for weekly product updates, feature highlights, and academic guides.
-              </p>
+            {/* Column 4: Cards (col-span-4) */}
+            <div className="lg:col-span-4 flex flex-col gap-5">
               
-              {/* Form inputs */}
-              <div className="flex gap-2">
-                <input 
-                  type="email" 
-                  placeholder="username@ed.ac.uk"
-                  className="bg-white/10 border border-[#1F5359]/30 rounded-xl px-4 py-2 text-xs text-white placeholder-slate-400 focus:outline-none focus:border-[#C9A24B] w-full font-medium"
-                />
-                <button className="px-4 py-2 bg-[#C9A24B] hover:bg-[#DEC17E] text-[#0F3235] font-bold transition rounded-xl text-xs shrink-0 cursor-pointer">
-                  Join
-                </button>
+              {/* Card 1: Hackathon Submission */}
+              <div className="p-5 rounded-2xl bg-white/5 border border-white/10 hover:border-[#C9A24B]/40 hover:shadow-lg hover:shadow-black/5 hover:-translate-y-1 transition-all duration-300 backdrop-blur-md group">
+                <div className="flex items-center justify-between mb-3.5">
+                  <h5 className="text-xs font-black uppercase tracking-wider text-[#DEC17E]">Hackathon Submission</h5>
+                  <span className="inline-flex items-center px-2 py-0.5 rounded bg-[#C9A24B]/10 border border-[#C9A24B] text-[9px] font-extrabold text-[#C9A24B] tracking-wider uppercase animate-pulse shadow-[0_0_8px_rgba(201,162,75,0.2)]">
+                    EDU-02
+                  </span>
+                </div>
+                <div>
+                  <p className="text-[9px] uppercase text-slate-400 font-bold tracking-wider leading-none">Problem Statement</p>
+                  <p className="text-[11px] text-slate-200 mt-2 leading-relaxed font-semibold">
+                    Reimagine the user experience of existing college ERP systems by creating a unified and intuitive interface for academics, attendance, fee management, and student services.
+                  </p>
+                </div>
               </div>
+
+              {/* Card 2: Team */}
+              <div className="p-5 rounded-2xl bg-white/5 border border-white/10 hover:border-[#C9A24B]/40 hover:shadow-lg hover:shadow-black/5 hover:-translate-y-1 transition-all duration-300 backdrop-blur-md">
+                <h5 className="text-xs font-black uppercase tracking-wider text-[#DEC17E] mb-1">Team</h5>
+                <p className="text-[10px] text-slate-400 font-bold tracking-wider uppercase mb-3">Designed & Developed By</p>
+                <div className="flex flex-wrap gap-2">
+                  {['Amay', 'Madhur', 'Mohin'].map((name) => (
+                    <span 
+                      key={name}
+                      className="inline-flex items-center px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 hover:border-[#C9A24B]/40 hover:bg-[#C9A24B]/10 hover:text-white transition-all text-xs font-bold text-slate-300 shadow-sm cursor-default"
+                    >
+                      {name}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
             </div>
 
           </div>
 
-          {/* Bottom metadata */}
-          <div className="pt-8 flex flex-col md:flex-row items-center justify-between text-[11px] text-slate-400 font-semibold gap-4 font-sans">
-            <p>© 2026 University of Edinburgh. Redesigned Smart Campus Operations.</p>
-            <div className="flex items-center gap-6">
-              <a href="#" className="hover:text-[#C9A24B] transition">Privacy Policies</a>
-              <a href="#" className="hover:text-[#C9A24B] transition">Terms & Conditions</a>
-              <a href="#" className="hover:text-[#C9A24B] transition">SLA Terms</a>
+          {/* Bottom copyright bar */}
+          <div className="pt-8 flex flex-col md:flex-row items-center justify-between text-[11px] text-slate-400 font-semibold gap-4 font-sans text-center md:text-left">
+            <p>© 2026 Smart Digital Campus Experience. Created for Hackathon Problem Statement <span className="text-[#C9A24B]">EDU-02</span>.</p>
+            <div className="flex items-center gap-1.5">
+              <span>Built with ❤️ by Team</span>
+              <span className="text-white font-bold">Amay • Madhur • Mohin</span>
             </div>
           </div>
         </div>
-      </footer>
+      </motion.footer>
 
     </div>
   );
