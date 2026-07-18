@@ -71,7 +71,7 @@ export const HeroCarousel: React.FC<{ onNavigate: (route: string) => void }> = (
       </div>
 
       {/* FIXED CONTENT OVERLAY - CENTERED SAAS LAYOUT */}
-      <div className="relative z-10 w-full max-w-4xl mx-auto px-6 h-full flex items-center justify-center text-center pt-20">
+      <div className="relative z-10 w-full max-w-4xl mx-auto px-6 h-full flex items-center justify-center text-center pt-16">
         <div className="flex flex-col items-center gap-5 max-w-3xl">
           
           {/* Dominant Heading */}
