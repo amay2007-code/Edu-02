@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { GraduationCap, ArrowRight, Menu, X, ChevronDown } from 'lucide-react';
+import { GraduationCap, ArrowRight, Menu, X, ChevronDown, LogOut, LayoutDashboard } from 'lucide-react';
 
 interface MenuItem {
   title: string;
@@ -34,7 +34,13 @@ const menuData: Record<string, MenuItem> = {
   }
 };
 
-export const Navbar: React.FC = () => {
+interface NavbarProps {
+  onNavigate: (route: string) => void;
+  isAuthenticated: boolean;
+  onLogout: () => void;
+}
+
+export const Navbar: React.FC<NavbarProps> = ({ onNavigate, isAuthenticated, onLogout }) => {
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mobileActiveAccordion, setMobileActiveAccordion] = useState<string | null>(null);
@@ -75,6 +81,22 @@ export const Navbar: React.FC = () => {
     }
   };
 
+  const handleLogoClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    onNavigate('/');
+  };
+
+  const handleDropdownItemClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    // Redirect to login/portal on click if not logged in, or scroll
+    if (isAuthenticated) {
+      onNavigate('/dashboard');
+    } else {
+      onNavigate('/login');
+    }
+    setActiveMenu(null);
+  };
+
   return (
     <nav 
       ref={navRef}
@@ -83,7 +105,11 @@ export const Navbar: React.FC = () => {
       <div className="max-w-7xl mx-auto px-6 w-full flex items-center justify-between">
         
         {/* Left Side: Brand Logo */}
-        <a href="#" className="flex items-center gap-2.5 group shrink-0">
+        <a 
+          href="#" 
+          onClick={handleLogoClick}
+          className="flex items-center gap-2.5 group shrink-0 focus:outline-none focus:ring-2 focus:ring-[#C9A24B] rounded p-1"
+        >
           <div className="w-10 h-10 rounded-xl bg-[#C9A24B] text-[#0F3235] flex items-center justify-center font-bold shadow-md group-hover:scale-105 transition-transform duration-300">
             <GraduationCap className="w-6 h-6" />
           </div>
@@ -130,8 +156,8 @@ export const Navbar: React.FC = () => {
                     {menu.items.map((item, idx) => (
                       <a
                         key={idx}
-                        href="#contact"
-                        onClick={() => setActiveMenu(null)}
+                        href="#"
+                        onClick={handleDropdownItemClick}
                         className="px-3.5 py-2.5 rounded-lg text-xs font-semibold text-white/80 hover:text-[#C9A24B] hover:bg-white/5 transition-all duration-200"
                       >
                         {item}
@@ -144,15 +170,48 @@ export const Navbar: React.FC = () => {
           ))}
         </div>
 
-        {/* Right Side: Gold CTA Button */}
-        <div className="hidden md:flex items-center shrink-0">
-          <a 
-            href="#contact" 
-            className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-xl bg-[#C9A24B] hover:bg-[#DEC17E] text-[#0F3235] text-xs font-bold uppercase tracking-wider shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer"
-          >
-            <span>Book Demo</span>
-            <ArrowRight className="w-3.5 h-3.5" />
-          </a>
+        {/* Right Side Actions: Authenticated state detection */}
+        <div className="hidden md:flex items-center gap-3 shrink-0">
+          {isAuthenticated ? (
+            <>
+              {/* Dashboard Direct Shortcut */}
+              <button 
+                onClick={() => onNavigate('/dashboard')}
+                className="inline-flex items-center gap-1.5 px-4.5 py-2.5 rounded-xl bg-[#C9A24B] hover:bg-[#DEC17E] text-[#0F3235] text-xs font-bold uppercase tracking-wider shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#C9A24B]"
+              >
+                <LayoutDashboard className="w-3.5 h-3.5 text-[#0F3235]" />
+                <span>Dashboard</span>
+              </button>
+              
+              {/* Logout Button */}
+              <button 
+                onClick={onLogout}
+                className="inline-flex items-center gap-1.5 px-4.5 py-2.5 rounded-xl bg-transparent hover:bg-white/5 border border-white/20 text-white text-xs font-bold uppercase tracking-wider hover:scale-[1.03] active:scale-95 transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#C9A24B]"
+              >
+                <LogOut className="w-3.5 h-3.5 text-white" />
+                <span>Logout</span>
+              </button>
+            </>
+          ) : (
+            <>
+              {/* Login Link */}
+              <button 
+                onClick={() => onNavigate('/login')}
+                className="text-xs font-bold uppercase tracking-wider text-white/95 hover:text-[#C9A24B] transition-colors cursor-pointer mr-2.5 focus:outline-none focus:ring-1 focus:ring-[#C9A24B] rounded px-2.5 py-1.5"
+              >
+                Login
+              </button>
+              
+              {/* Book Demo Button */}
+              <button 
+                onClick={() => onNavigate('/login')} 
+                className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-xl bg-[#C9A24B] hover:bg-[#DEC17E] text-[#0F3235] text-xs font-bold uppercase tracking-wider shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#C9A24B]"
+              >
+                <span>Book Demo</span>
+                <ArrowRight className="w-3.5 h-3.5 text-[#0F3235]" />
+              </button>
+            </>
+          )}
         </div>
 
         {/* Mobile Hamburger Toggle */}
@@ -190,11 +249,8 @@ export const Navbar: React.FC = () => {
                     {menu.items.map((item, idx) => (
                       <a
                         key={idx}
-                        href="#contact"
-                        onClick={() => {
-                          setMobileMenuOpen(false);
-                          setMobileActiveAccordion(null);
-                        }}
+                        href="#"
+                        onClick={handleDropdownItemClick}
                         className="text-xs text-white/70 hover:text-[#C9A24B] py-1 transition-colors"
                       >
                         {item}
@@ -205,13 +261,51 @@ export const Navbar: React.FC = () => {
               </div>
             ))}
             
-            <a 
-              href="#contact"
-              onClick={() => setMobileMenuOpen(false)}
-              className="inline-flex items-center justify-center gap-2 py-3 rounded-xl bg-[#C9A24B] text-[#0F3235] text-xs font-bold uppercase tracking-wider hover:bg-[#DEC17E] transition mt-2"
-            >
-              Book Live Demo
-            </a>
+            {isAuthenticated ? (
+              <div className="flex flex-col gap-2 mt-2">
+                <button 
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    onNavigate('/dashboard');
+                  }}
+                  className="inline-flex items-center justify-center gap-2 py-3 rounded-xl bg-[#C9A24B] text-[#0F3235] text-xs font-bold uppercase tracking-wider hover:bg-[#DEC17E] transition cursor-pointer"
+                >
+                  <LayoutDashboard className="w-4 h-4" />
+                  <span>Student Dashboard</span>
+                </button>
+                <button 
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    onLogout();
+                  }}
+                  className="inline-flex items-center justify-center gap-2 py-3 rounded-xl bg-transparent border border-white/20 text-white text-xs font-bold uppercase tracking-wider hover:bg-white/5 transition cursor-pointer"
+                >
+                  <LogOut className="w-4 h-4" />
+                  <span>Logout</span>
+                </button>
+              </div>
+            ) : (
+              <div className="flex flex-col gap-2 mt-2">
+                <button 
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    onNavigate('/login');
+                  }}
+                  className="inline-flex items-center justify-center gap-2 py-3 rounded-xl bg-transparent border border-white/20 text-white text-xs font-bold uppercase tracking-wider hover:bg-white/5 transition cursor-pointer"
+                >
+                  Login
+                </button>
+                <button 
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    onNavigate('/login');
+                  }}
+                  className="inline-flex items-center justify-center gap-2 py-3 rounded-xl bg-[#C9A24B] text-[#0F3235] text-xs font-bold uppercase tracking-wider hover:bg-[#DEC17E] transition cursor-pointer"
+                >
+                  Book Live Demo
+                </button>
+              </div>
+            )}
           </motion.div>
         )}
       </AnimatePresence>

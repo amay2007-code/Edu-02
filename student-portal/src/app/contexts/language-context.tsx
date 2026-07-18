@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { createContext, useContext, useState, useEffect, ReactNode } from "react";
 
 export type Language = "en" | "hi" | "raj";

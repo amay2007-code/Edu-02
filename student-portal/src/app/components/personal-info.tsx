@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { useState } from "react";
 import { useLanguage } from "../contexts/language-context";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";

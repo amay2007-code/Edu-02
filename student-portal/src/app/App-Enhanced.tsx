@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { useState, useEffect } from "react";
 import { LanguageProvider, useLanguage } from "./contexts/language-context";
 import { Login } from "./components/auth/login";

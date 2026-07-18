@@ -6,7 +6,7 @@ import { HeroSlide } from './HeroSlide';
 import { CarouselControls } from './CarouselControls';
 import { PaginationDots } from './PaginationDots';
 
-export const HeroCarousel: React.FC = () => {
+export const HeroCarousel: React.FC<{ onNavigate: (route: string) => void }> = ({ onNavigate }) => {
   const {
     currentIndex,
     goToNext,
@@ -101,12 +101,12 @@ export const HeroCarousel: React.FC = () => {
               <span>Explore the Platform</span>
               <ArrowRight className="w-4 h-4 text-[#0F3235]" />
             </a>
-            <a 
-              href="#contact" 
-              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-transparent hover:bg-[#1F5359]/20 text-white border border-[#3A7A80] font-bold rounded-2xl hover:scale-[1.03] active:scale-95 transition-all duration-300 pointer-events-auto"
+            <button 
+              onClick={() => onNavigate('/login')}
+              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-transparent hover:bg-[#1F5359]/20 text-white border border-[#3A7A80] font-bold rounded-2xl hover:scale-[1.03] active:scale-95 transition-all duration-300 pointer-events-auto cursor-pointer"
             >
               <span>Book Demo</span>
-            </a>
+            </button>
           </div>
 
           {/* Stats row inside overlay with counter animations */}

@@ -181,3 +181,19 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #B28E3F;
 }
+
+/* Prevent student-portal global body styles from bleeding into the landing and login pages */
+body:not(.dashboard-active) {
+  background-color: #F4F1E8 !important;
+  color: #12201F !important;
+  font-family: "Inter", system-ui, -apple-system, sans-serif !important;
+}
+
+body:not(.dashboard-active) h1,
+body:not(.dashboard-active) h2,
+body:not(.dashboard-active) h3,
+body:not(.dashboard-active) h4,
+body:not(.dashboard-active) h5,
+body:not(.dashboard-active) h6 {
+  color: #12201F !important;
+}

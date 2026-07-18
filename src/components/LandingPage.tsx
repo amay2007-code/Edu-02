@@ -154,7 +154,13 @@ const journeySteps = [
   { step: '07', title: 'Graduate', subtitle: 'Secure digital transcripts' },
 ];
 
-export const LandingPage: React.FC = () => {
+interface LandingPageProps {
+  onNavigate: (route: string) => void;
+  isAuthenticated: boolean;
+  onLogout: () => void;
+}
+
+export const LandingPage: React.FC<LandingPageProps> = ({ onNavigate, isAuthenticated, onLogout }) => {
   // Navigation & Scroll states
   // Interactive UI states
   const [activeFaq, setActiveFaq] = useState<string | null>(null);
@@ -181,10 +187,10 @@ export const LandingPage: React.FC = () => {
       <div className="absolute bottom-[1000px] left-[15%] w-[36rem] h-[36rem] bg-gradient-to-r from-[#1F5359]/5 to-[#C9A24B]/5 rounded-full blur-3xl pointer-events-none -z-10" />
       
       {/* ----------------- STICKY GLASS NAVBAR ----------------- */}
-      <Navbar />
+      <Navbar onNavigate={onNavigate} isAuthenticated={isAuthenticated} onLogout={onLogout} />
 
       {/* ----------------- HERO SECTION CAROUSEL ----------------- */}
-      <HeroCarousel />
+      <HeroCarousel onNavigate={onNavigate} />
 
       {/* ----------------- INTERACTIVE WORKSPACE SHOWCASE ----------------- */}
       <InteractiveShowcase />
